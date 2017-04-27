@@ -26,7 +26,7 @@ $(document).ready(function() {
 
   var msg = pickRandomQuote(quotes);
   quoteField.innerHTML = msg;
-  imgContainer.style.backgroundImage = "url('https://unsplash.it/640/400/?random')"
+  imgContainer.style.backgroundImage = "url('https://unsplash.it/832/624/?random')"
 
   quoteButton.addEventListener('click', function() {
 

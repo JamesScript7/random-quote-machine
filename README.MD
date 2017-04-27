@@ -7,6 +7,6 @@
 
 3. Utilize an API for the background images.
 
-4. Styling.
+4. Make it mobile-friendly.
 
 5. Share the quote on social media.
