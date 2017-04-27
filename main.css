@@ -4,6 +4,16 @@
   padding: 0;
 }
 
+body {
+  font-family: Helvetica, Verdana, sans-serif;
+}
+
+
 #container {
   background-repeat: no-repeat;
+}
+
+#quote-box {
+  background: rgba(24, 24, 24, 0.4);
+  color: snow;
 }
