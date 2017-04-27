@@ -26,17 +26,31 @@ $(document).ready(function() {
 
   var msg = pickRandomQuote(quotes);
   quoteField.innerHTML = msg;
-  imgContainer.style.backgroundImage = "url('https://unsplash.it/1024/768/?random')"
+  // imgContainer.style.backgroundImage = "url('https://unsplash.it/1024/768/?random')";
 
   quoteButton.addEventListener('click', function() {
     $.ajax({
       url: 'https://gist.githubusercontent.com/dmakk767/9375ff01aff76f1788aead1df9a66338/raw/491f8c2e91b7d3b8f1c8230e32d9c9bc1a1adfa6/Quotes.json%2520',
       success: function(data) {
-        var test = data;
-        console.log(test);
+        var quoteList = JSON.parse(data);
+        var randomNum = test.length * Math.random() << 0;
+        console.log(randomNum);
+
+
+
+
       },
       cache: false
     });
+
+    // // url doesn't seem to be refreshing on their end.
+    // $.ajax({
+    //   url: 'https://unsplash.it/1024/768/?random',
+    //   success: function() {
+    //     imgContainer.style.backgroundImage = "url('https://unsplash.it/1024/768/?random')";
+    //   },
+    //   cache: false
+    // });
 
     // This is here because the Math.random() function returned the same keys at times.
     while (quoteField.innerHTML === msg) {
