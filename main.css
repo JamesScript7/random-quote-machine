@@ -4,16 +4,26 @@
   padding: 0;
 }
 
-body {
-  font-family: Helvetica, Verdana, sans-serif;
+html {
+  height: 100%;
 }
 
+body {
+  font-family: Helvetica, Verdana, sans-serif;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 #container {
   background-repeat: no-repeat;
+  width: 640px;
+  height: 400px;
 }
 
 #quote-box {
+  padding: 10px;
   background: rgba(24, 24, 24, 0.4);
   color: snow;
 }
