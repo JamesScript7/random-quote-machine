@@ -1,5 +1,6 @@
 $(document).ready(function() {
   var
+    imgContainer = document.getElementById('container'),
     quoteField = document.getElementById('quote-field'),
     quoteAuthor = document.getElementById('quote-author'),
     quoteButton = document.getElementById('quote-btn'),
@@ -25,8 +26,10 @@ $(document).ready(function() {
 
   var msg = pickRandomQuote(quotes);
   quoteField.innerHTML = msg;
+  imgContainer.style.backgroundImage = "url('https://unsplash.it/640/400/?random')"
 
   quoteButton.addEventListener('click', function() {
+
     // This is here because the Math.random() function returned the same keys at times.
     while (quoteField.innerHTML === msg) {
       msg = pickRandomQuote(quotes);
