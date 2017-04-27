@@ -1,8 +1,8 @@
 $(document).ready(function() {
   var
     quoteField = document.getElementById('quote-field'),
-    quoteButton = document.getElementById('quote-btn'),
     quoteAuthor = document.getElementById('quote-author'),
+    quoteButton = document.getElementById('quote-btn'),
     quotes = {
     "Maya": "My mission in life is not merely to survive...",
     "Dita": "Some days are just bad days, that\'s all. You have to experience...",
@@ -31,7 +31,6 @@ $(document).ready(function() {
     while (quoteField.innerHTML === msg) {
       msg = pickRandomQuote(quotes);
     }
-
     quoteField.innerHTML = msg;
   });
 
