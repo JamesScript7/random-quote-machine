@@ -49,6 +49,11 @@ $(document).ready(function() {
     //   cache: false
     // });
 
+    // // Use this when using local object as quote source.
+    // while (msg === quoteField.innerHTML) {
+    //   msg = pickRandomQuote();
+    // }
+
     msg = pickRandomQuote();
     quoteField.innerHTML = msg;
   });
