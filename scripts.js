@@ -2,7 +2,9 @@ $(document).ready(function() {
   var
     imgContainer = document.getElementById('container'),
     quoteField = document.getElementById('quote-field'),
-    quoteButton = document.getElementById('quote-btn');
+    quoteButton = document.getElementById('quote-btn'),
+    backgroundImg = "url('https://unsplash.it/1024/768/?random')";
+    imgContainer.style.backgroundImage = backgroundImg;
 
   // var quotes = {
   //   "Maya": "My mission in life is not merely to survive...",
@@ -37,7 +39,7 @@ $(document).ready(function() {
   }
 
   var msg = pickRandomQuote();
-  imgContainer.style.backgroundImage = "url('https://unsplash.it/1024/768/?random')";
+  quoteField.innerHTML = msg;
 
   quoteButton.addEventListener('click', function() {
     // // I want the background image to update but the url doesn't seem to be refreshing on their end.
@@ -49,12 +51,12 @@ $(document).ready(function() {
     //   cache: false
     // });
 
-    // // Use this when using local object as quote source.
-    // while (msg === quoteField.innerHTML) {
-    //   msg = pickRandomQuote();
-    // }
+    if (quoteField.innerHTML === 'undefined') {
+      console.error("Not connected to the Interwebs");
+    } else if (quoteField.innerHTML === msg) {
+      msg = pickRandomQuote();
+    }
 
-    msg = pickRandomQuote();
     quoteField.innerHTML = msg;
   });
 

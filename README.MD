@@ -1,12 +1,20 @@
-# Random Quote Machine!
+# 101 Famous Quotes!
 
 ## A simple quote generator.
-1. Extract quotes internally from an object.
+* Displays a random quote from a JSON list of quotes.
 
-2. Utilize an API/Library/JSON for a wider library of quotes.
+* Provides a random motivational image for the quote.
 
-3. Utilize an API/URL for the background images.
+* Hopefully the quote provides inspiration || motivation for you.
 
-4. Make it mobile responsive.
+## Incremental Steps taken:
+1. Extracted quotes from a local source.
+2. GET requested a background image.
+3. GET requested quotes from an external source (GitHub raw data).
+4. Styled the site for aesthetics.
 
-5. Share the quote on social media.
+## To do:
+1. Make it mobile responsive.
+2. Add CSS transition effects.
+3. Add quote API for a larger database of quotes?
+4. ES6 compliant?
