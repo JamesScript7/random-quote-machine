@@ -51,13 +51,14 @@ $(document).ready(function() {
     //   cache: false
     // });
 
-    if (quoteField.innerHTML === 'undefined') {
+    if (msg === 'undefined') {
       console.error("Not connected to the Interwebs");
-    } else if (quoteField.innerHTML === msg) {
+    }
+    while (quoteField.innerHTML === msg) {
       msg = pickRandomQuote();
     }
 
-    quoteField.innerHTML = msg;
+    msg = pickRandomQuote();
   });
 
 });
