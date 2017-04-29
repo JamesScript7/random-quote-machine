@@ -45,8 +45,10 @@ $(document).ready(function() {
     // // I want the background image to update but the url doesn't seem to be refreshing on their end.
     // $.ajax({
     //   url: 'https://unsplash.it/1024/768/?random',
-    //   success: function() {
-    //     imgContainer.style.backgroundImage = "url('https://unsplash.it/1024/768/?random')";
+    //   success: function(data) {
+    //     // var nextImg = "url('https://unsplash.it/1024/768/?random')";
+    //     console.log("test");
+    //     imgContainer.style.backgroundImage = 'https://unsplash.it/1024/768/?random';
     //   },
     //   cache: false
     // });
