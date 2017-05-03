@@ -25,7 +25,6 @@ $(document).ready(function() {
     //
     // return obj[keys[keyNum]];
 
-    // The AJAX way:
     $.ajax({
       url: 'https://gist.githubusercontent.com/dmakk767/9375ff01aff76f1788aead1df9a66338/raw/491f8c2e91b7d3b8f1c8230e32d9c9bc1a1adfa6/Quotes.json%2520',
       success: function(data) {
@@ -42,17 +41,6 @@ $(document).ready(function() {
   quoteField.innerHTML = msg;
 
   quoteButton.addEventListener('click', function() {
-    // // I want the background image to update but the url doesn't seem to be refreshing on their end.
-    // $.ajax({
-    //   url: 'https://unsplash.it/1024/768/?random',
-    //   success: function(data) {
-    //     // var nextImg = "url('https://unsplash.it/1024/768/?random')";
-    //     console.log("test");
-    //     imgContainer.style.backgroundImage = 'https://unsplash.it/1024/768/?random';
-    //   },
-    //   cache: false
-    // });
-
     if (msg === 'undefined') {
       console.error("Not connected to the Interwebs");
     }
