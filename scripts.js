@@ -31,7 +31,7 @@ $(document).ready(function() {
         var quoteList = JSON.parse(data);
         var randomNum = quoteList.length * Math.random() << 0;
 
-        quoteField.innerHTML = `${quoteList[randomNum].quote} &nbsp - ${quoteList[randomNum].name}`;
+        quoteField.innerHTML = `${quoteList[randomNum].quote} - ${quoteList[randomNum].name}`;
       },
       cache: false
     });
@@ -50,5 +50,13 @@ $(document).ready(function() {
 
     msg = pickRandomQuote();
   });
+
+  twttr.widgets.createShareButton(
+    'http:\/\/localhost:3000\/',
+    document.getElementById('btn'),
+    {
+      text: "Quote goes here..."
+    }
+  );
 
 });
