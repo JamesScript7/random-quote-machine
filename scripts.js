@@ -3,19 +3,41 @@ $(document).ready(function() {
     imgContainer = document.getElementById('container'),
     quoteField = document.getElementById('quote-field'),
     quoteButton = document.getElementById('quote-btn'),
+    tweetBtn = document.getElementById('btn'),
     backgroundImg = "url('https://unsplash.it/1024/768/?random')";
+
     imgContainer.style.backgroundImage = backgroundImg;
+    var url = 'https://gist.githubusercontent.com/dmakk767/9375ff01aff76f1788aead1df9a66338/raw/491f8c2e91b7d3b8f1c8230e32d9c9bc1a1adfa6/Quotes.json%2520';
 
-  // var quotes = {
-  //   "Maya": "My mission in life is not merely to survive...",
-  //   "Dita": "Some days are just bad days, that\'s all. You have to experience...",
-  //   "Allen": "Your attitude is like a box of crayons that color your world...",
-  //   "James": "You can only YOLO once...",
-  //   "Jewel": "I love furries and ice cream!",
-  //   "Jean": "I\'m proud to be a part of vape nation."
-  // };
+  function randomNum(x) {
+    return (x.length * Math.random() << 0);
+  };
 
-  function pickRandomQuote() {
+  function getJson(handleData) {
+    $.ajax({
+      url: url,
+      success: function(data) {
+        handleData(data);
+      }
+    })
+  };
+
+  getJson(function(out) {
+    var quoteList = JSON.parse(out);
+    var rand = randomNum(quoteList);
+    quoteField.innerHTML = `${quoteList[rand].quote} - ${quoteList[rand].name}`;
+    var fullQuote = quoteField.innerHTML;
+
+    twttr.widgets.createShareButton(
+      'http:\/\/localhost:3000\/',
+      document.getElementById('btn'),
+      {
+        text: fullQuote
+      }
+    );
+  });
+
+  // function pickRandomQuote() {
     // // This will put the keys in an array so we can use the index for random assignment.
     // var
     //   keys = Object.keys(obj),
@@ -24,39 +46,36 @@ $(document).ready(function() {
     // quoteAuthor.innerHTML = `&nbsp - ${keys[keyNum]}`;
     //
     // return obj[keys[keyNum]];
+  // }
 
-    $.ajax({
-      url: 'https://gist.githubusercontent.com/dmakk767/9375ff01aff76f1788aead1df9a66338/raw/491f8c2e91b7d3b8f1c8230e32d9c9bc1a1adfa6/Quotes.json%2520',
-      success: function(data) {
-        var quoteList = JSON.parse(data);
-        var randomNum = quoteList.length * Math.random() << 0;
+  function tweetFormat(quote, author) {
+    var res = quote;
+    var lenWithoutAuthor = 112 - author.length;
 
-        quoteField.innerHTML = `${quoteList[randomNum].quote} - ${quoteList[randomNum].name}`;
-      },
-      cache: false
-    });
+    if (quote.length > lenWithoutAuthor) {
+      res = quote.substring(0, lenWithoutAuthor) + "..." + " -" + author;
+    } else {
+      res = quote + " - " + author;
+    }
+    return res;
   }
 
-  var msg = pickRandomQuote();
-  quoteField.innerHTML = msg;
-
   quoteButton.addEventListener('click', function() {
-    if (msg === 'undefined') {
-      console.error("Not connected to the Interwebs");
-    }
-    while (quoteField.innerHTML === msg) {
-      msg = pickRandomQuote();
-    }
+    getJson(function(out) {
+      var
+        quoteList = JSON.parse(out),
+        rand = randomNum(quoteList),
+        fullQuote = tweetFormat(quoteList[rand].quote, quoteList[rand].name);
 
-    msg = pickRandomQuote();
+      quoteField.innerHTML = `${quoteList[rand].quote} - ${quoteList[rand].name}`;
+      tweetBtn.innerHTML = "";
+
+      twttr.widgets.createShareButton(
+        'http:\/\/localhost:3000\/',
+        document.getElementById('btn'),
+        {text: fullQuote});
+    });
   });
 
-  twttr.widgets.createShareButton(
-    'http:\/\/localhost:3000\/',
-    document.getElementById('btn'),
-    {
-      text: "Quote goes here..."
-    }
-  );
 
 });
