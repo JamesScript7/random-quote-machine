@@ -13,6 +13,18 @@ $(document).ready(function() {
     return (x.length * Math.random() << 0);
   };
 
+  function tweetFormat(quote, author) {
+    var res = quote;
+    var lenWithoutAuthor = 114 - author.length;
+
+    if (quote.length > lenWithoutAuthor) {
+      res = quote.substring(0, lenWithoutAuthor) + "...";
+    } else {
+      res = quote;
+    }
+    return res;
+  }
+
   function getJson(handleData) {
     $.ajax({
       url: url,
@@ -23,18 +35,25 @@ $(document).ready(function() {
   };
 
   getJson(function(out) {
-    var quoteList = JSON.parse(out);
-    var rand = randomNum(quoteList);
+    var
+      quoteList = JSON.parse(out),
+      rand = randomNum(quoteList),
+      authorHashTag = quoteList[rand].name.replace(/\s/g, ""),
+      fullQuote = tweetFormat(quoteList[rand].quote, authorHashTag);
+
     quoteField.innerHTML = `${quoteList[rand].quote} - ${quoteList[rand].name}`;
-    var fullQuote = quoteField.innerHTML;
+    tweetBtn.innerHTML = "";
 
     twttr.widgets.createShareButton(
-      'http:\/\/localhost:3000\/',
+      '/',
       document.getElementById('btn'),
       {
-        text: fullQuote
+        text: fullQuote,
+        hashtags: authorHashTag,
+        via: '101FamousQuotes'
       }
     );
+
   });
 
   // function pickRandomQuote() {
@@ -48,32 +67,27 @@ $(document).ready(function() {
     // return obj[keys[keyNum]];
   // }
 
-  function tweetFormat(quote, author) {
-    var res = quote;
-    var lenWithoutAuthor = 112 - author.length;
-
-    if (quote.length > lenWithoutAuthor) {
-      res = quote.substring(0, lenWithoutAuthor) + "..." + " -" + author;
-    } else {
-      res = quote + " - " + author;
-    }
-    return res;
-  }
-
   quoteButton.addEventListener('click', function() {
     getJson(function(out) {
       var
         quoteList = JSON.parse(out),
         rand = randomNum(quoteList),
-        fullQuote = tweetFormat(quoteList[rand].quote, quoteList[rand].name);
+        authorHashTag = quoteList[rand].name.replace(/\s/g, "");
+        fullQuote = tweetFormat(quoteList[rand].quote, authorHashTag);
 
       quoteField.innerHTML = `${quoteList[rand].quote} - ${quoteList[rand].name}`;
       tweetBtn.innerHTML = "";
 
       twttr.widgets.createShareButton(
-        'http:\/\/localhost:3000\/',
+        '/',
         document.getElementById('btn'),
-        {text: fullQuote});
+        {
+          text: fullQuote,
+          hashtags: authorHashTag,
+          via: '101FamousQuotes'
+        }
+      );
+
     });
   });
 
