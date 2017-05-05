@@ -101,7 +101,7 @@ footer ul li {
 }
 
 #quote-btn:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   transition: all 400ms linear;
 }
 
