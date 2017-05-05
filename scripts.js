@@ -5,7 +5,7 @@ $(document).ready(function() {
     quoteButton = document.getElementById('quote-btn'),
     tweetBtn = document.getElementById('btn'),
     backgroundImg = "url('https://unsplash.it/1024/768/?random')",
-    url = 'https://gist.githubusercontent.com/dmakk767/9375ff01aff76f1788aead1df9a66338/raw/491f8c2e91b7d3b8f1c8230e32d9c9bc1a1adfa6/Quotes.json%2520';
+    urlQuotes = 'https://gist.githubusercontent.com/dmakk767/9375ff01aff76f1788aead1df9a66338/raw/491f8c2e91b7d3b8f1c8230e32d9c9bc1a1adfa6/Quotes.json%2520';
 
     imgContainer.style.backgroundImage = backgroundImg;
 
@@ -27,10 +27,11 @@ $(document).ready(function() {
 
   function getJson(handleData) {
     $.ajax({
-      url: url,
+      url: urlQuotes,
       success: function(data) {
         handleData(data);
-      }
+      },
+      cache: "false"
     })
   };
 
