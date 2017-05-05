@@ -12,8 +12,11 @@
 2. GET requested a background image:  (https://unsplash.it/1024/768/?random)
 3. GET requested quotes from an external source: (https://gist.github.com/dmakk767/9375ff01aff76f1788aead1df9a66338).
 4. Styled the site for aesthetics.
-5. Made it mobile responsive.
+5. Added a social media share button.
+6. Made it mobile responsive.
 
 ## To do:
-3. Add quote API for a larger database of quotes?
-4. ES6 compliant?
+3. Add Facebook link
+4. Add quote API for a larger database of quotes?
+5. ES6 compliant?
+6. Add favicon?
