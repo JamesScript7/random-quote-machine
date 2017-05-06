@@ -84,16 +84,11 @@ footer ul li {
   justify-content: flex-end;
 }
 
-#btn {
-  /*top: 63px;*/
-  /*right: -12px;*/
-}
-
 #quote-btn {
   position: absolute;
   top: 68px;
   padding: 8px;
-  right: -12px;
+  right: -6px;
   border: 0px;
   background-color: #9947EA;
   color: snow;
