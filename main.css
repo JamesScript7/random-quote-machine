@@ -12,11 +12,6 @@ html {
 body {
   font-family: Helvetica, Verdana, sans-serif;
   height: 100%;
-  /*flex box*/
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
 }
 
 a {
@@ -27,8 +22,8 @@ a:link, a:visited {
   color: #303030;
 }
 
-a:hover {
-  color: royalblue;
+a:hover, a:active {
+  color: #9947EA;
   transition: color 500ms linear;
 }
 
@@ -76,33 +71,41 @@ footer ul li {
 
 #quote-field {
   /*Use of px values correct?*/
-  word-spacing: 2px;
-  letter-spacing: 1px;
+  word-spacing: 1px;
 }
 
 #btn-box {
   position: relative;
-  /*flex box*/
   display: flex;
   justify-content: flex-end;
 }
 
+#btn {
+  position: absolute;
+  top: 63px;
+  right: -12px;
+}
+
 #quote-btn {
   position: absolute;
-  top: 60px;
-  padding: 6px;
+  top: 25px;
+  padding: 8px;
   right: -12px;
   border: 0px;
-  box-shadow: 1px 1px 6px #202020;
-  background-color: royalblue;
+  background-color: #9947EA;
   color: snow;
+  /*border-radius: 4px;*/
+  box-shadow: 1px 2px 7px #202020;
   /*flex box*/
   align-self: end;
 }
 
-#quote-btn:hover {
-  transform: scale(1.05);
-  transition: all 400ms linear;
+#quote-btn:active {
+  background-color: #ACA200;
+}
+
+#quote-btn:focus {
+  outline: none;
 }
 
 /*#quote-box:hover {

@@ -15,7 +15,7 @@ $(document).ready(function() {
 
   function tweetFormat(quote, author) {
     var res = quote;
-    var lenWithoutAuthor = 114 - author.length;
+    var lenWithoutAuthor = 119 - author.length;
 
     if (quote.length > lenWithoutAuthor) {
       res = quote.substring(0, lenWithoutAuthor) + "...";
@@ -51,7 +51,7 @@ $(document).ready(function() {
       {
         text: fullQuote,
         hashtags: authorHashTag,
-        via: '101FamousQuotes'
+        via: 'itJamesKim'
       }
     );
 
@@ -85,7 +85,7 @@ $(document).ready(function() {
         {
           text: fullQuote,
           hashtags: authorHashTag,
-          via: '101FamousQuotes'
+          via: 'itJamesKim'
         }
       );
 
