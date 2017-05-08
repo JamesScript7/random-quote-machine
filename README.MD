@@ -18,5 +18,5 @@
 ## To do:
 3. Add Facebook link
 4. Add quote API for a larger database of quotes?
-5. ES6 compliant?
+5. Refactor to ES6?
 6. Add favicon?

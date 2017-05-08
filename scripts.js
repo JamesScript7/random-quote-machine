@@ -57,7 +57,7 @@ $(document).ready(function() {
 
   });
 
-  // function pickRandomQuote() {
+  // function pickRandomQuote(obj) {
     // // This will put the keys in an array so we can use the index for random assignment.
     // var
     //   keys = Object.keys(obj),
