@@ -17,7 +17,7 @@
 7. Background image reloads with button click.
 
 ## To do:
-3. Add Facebook link
-4. Add quote API for a larger database of quotes?
-5. Refactor to ES6?
-6. Add favicon?
+1. Add Facebook link
+2. Add quote API for a larger database of quotes?
+3. Refactor to ES6?
+4. Add favicon?
