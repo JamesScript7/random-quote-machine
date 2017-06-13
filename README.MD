@@ -14,6 +14,7 @@
 4. Styled the site for aesthetics.
 5. Added a social media share button.
 6. Made it mobile responsive.
+7. Background image reloads with button click.
 
 ## To do:
 3. Add Facebook link
