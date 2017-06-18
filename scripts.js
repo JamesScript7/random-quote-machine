@@ -78,7 +78,7 @@ $(document).ready(function() {
         authorHashTag = quoteList[rand].name.replace(/\s/g, "");
         fullQuote = tweetFormat(quoteList[rand].quote, authorHashTag);
 
-      quoteField.innerHTML = `${quoteList[rand].quote} - ${quoteList[rand].name}`;
+      //quoteField.innerHTML = `${quoteList[rand].quote} - ${quoteList[rand].name}`;
       tweetBtn.innerHTML = "";
 
       twttr.widgets.createShareButton(
