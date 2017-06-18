@@ -69,6 +69,8 @@ $(document).ready(function() {
   // }
 
   quoteButton.addEventListener('click', function() {
+    location.reload();
+
     getJson(function(out) {
       var
         quoteList = JSON.parse(out),

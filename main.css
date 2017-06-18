@@ -6,7 +6,7 @@
 
 html {
   height: 100%;
-  background-color: #F5F5F5;
+  background-color: black;
 }
 
 body {
@@ -32,9 +32,11 @@ a:hover, a:active {
 }
 
 footer {
+  background-color: snow;
   display: block;
   width: 100%;
-  margin: 5px 0px;
+  padding: 5px 0;
+  /*margin: 5px 0px;*/
   text-align: center;
 }
 
@@ -57,7 +59,7 @@ footer ul li {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0px 0px 7px #202020;
+  /*box-shadow: 0px 0px 10px #202020;*/
 }
 
 #quote-box {
@@ -67,8 +69,7 @@ footer ul li {
   width: 55%;
   color: snow;
   font-size: 1.5em;
-  background: rgba(24, 24, 24, 0.6);
-  box-shadow: 1px 2px 7px #202020;
+  background: rgba(24, 24, 24, 0.5);
   /*flex box*/
   display: flex;
   flex-direction: column;
@@ -86,6 +87,7 @@ footer ul li {
 }
 
 #quote-btn {
+  font-size: 15px;
   position: absolute;
   top: 58px;
   padding: 12px;
