@@ -1,13 +1,13 @@
 $(document).ready(function() {
   var
     imgContainer = document.getElementById('container'),
+    backgroundImg = "url('https://unsplash.it/1024/768/?random')",
     quoteField = document.getElementById('quote-field'),
     quoteButton = document.getElementById('quote-btn'),
     tweetBtn = document.getElementById('btn'),
-    backgroundImg = "url('https://unsplash.it/1024/768/?random')",
     urlQuotes = 'https://gist.githubusercontent.com/dmakk767/9375ff01aff76f1788aead1df9a66338/raw/491f8c2e91b7d3b8f1c8230e32d9c9bc1a1adfa6/Quotes.json%2520';
 
-    imgContainer.style.backgroundImage = backgroundImg;
+  imgContainer.style.backgroundImage = backgroundImg;
 
   function randomNum(x) {
     return (x.length * Math.random() << 0);
@@ -45,6 +45,11 @@ $(document).ready(function() {
     quoteField.innerHTML = `${quoteList[rand].quote} - ${quoteList[rand].name}`;
     tweetBtn.innerHTML = "";
 
+    $('#quote-field').hide();
+    $('#quote-field').fadeIn(600, function() {
+      return quoteField;
+    });
+
     twttr.widgets.createShareButton(
       '/',
       document.getElementById('btn'),
@@ -69,29 +74,8 @@ $(document).ready(function() {
   // }
 
   quoteButton.addEventListener('click', function() {
-    location.reload();
+    window.location.reload();
 
-    getJson(function(out) {
-      var
-        quoteList = JSON.parse(out),
-        rand = randomNum(quoteList),
-        authorHashTag = quoteList[rand].name.replace(/\s/g, "");
-        fullQuote = tweetFormat(quoteList[rand].quote, authorHashTag);
-
-      quoteField.innerHTML = `${quoteList[rand].quote} - ${quoteList[rand].name}`;
-      tweetBtn.innerHTML = "";
-
-      twttr.widgets.createShareButton(
-        '/',
-        document.getElementById('btn'),
-        {
-          text: fullQuote,
-          hashtags: authorHashTag,
-          via: 'itJamesKim'
-        }
-      );
-
-    });
   });
 
 
