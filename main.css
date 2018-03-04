@@ -94,8 +94,13 @@ img {
   word-spacing: 1px;
 }
 
+span#btn {
+  height: 28px;
+}
+
 #btn-box {
   position: relative;
+  height: 10px;
   display: flex;
   justify-content: flex-end;
 }
