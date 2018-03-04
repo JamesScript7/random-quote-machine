@@ -1,4 +1,6 @@
 $(document).ready(function() {
+  $('#quote-box').hide();
+
   var
     backgroundImg = 'https://picsum.photos/1024/768/?image=',
     imageNumber = randomImgNum(),
@@ -52,6 +54,7 @@ $(document).ready(function() {
           $('#image').attr('src', backgroundImg + imageNumber);
 
           document.getElementById('image').onload = function() {
+            $('#quote-box').show();
             $('#image').fadeIn(1000);
 
             getJson(function(out) {
