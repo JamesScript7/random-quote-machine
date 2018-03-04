@@ -2,8 +2,10 @@ $(document).ready(function() {
   $('#quote-box').hide();
 
   var
+    // Image related
     backgroundImg = 'https://picsum.photos/1024/768/?image=',
     imageNumber = randomImgNum(),
+    // Quote related
     quoteField = document.getElementById('quote-field'),
     quoteButton = document.getElementById('quote-btn'),
     tweetBtn = document.getElementById('btn'),
@@ -39,6 +41,7 @@ $(document).ready(function() {
     });
   };
 
+  // Main function that retrieves and loads the content.
   function loadIMG() {
     imageNumber = randomImgNum();
 
@@ -57,6 +60,7 @@ $(document).ready(function() {
             $('#quote-box').show();
             $('#image').fadeIn(1000);
 
+            // Gets and parses quote
             getJson(function(out) {
               var
                 quoteList = JSON.parse(out),
@@ -90,9 +94,10 @@ $(document).ready(function() {
     });
   }
 
+  // Initializes image and quote
   loadIMG();
 
-  // Image refreshes on button click
+  // Image and quote refreshes on button click
   $('#quote-btn').click(function() {
     loadIMG();
   });
@@ -107,5 +112,4 @@ $(document).ready(function() {
     //
     // return obj[keys[keyNum]];
   // }
-
 });
