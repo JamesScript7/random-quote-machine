@@ -7,7 +7,7 @@
 
 * Hopefully the quotes provide inspiration || motivation for you :)
 
-Skills: HTML, CSS, JS, RegExp, jQuery, and flexbox.
+**Skills:** HTML, CSS, JS, RegExp, jQuery, and flexbox.
 
 ## Incremental Steps taken:
 1. Extracted quotes from a local source.
