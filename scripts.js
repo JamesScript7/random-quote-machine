@@ -57,6 +57,13 @@ $(document).ready(function() {
           $('#image').attr('src', backgroundImg + imageNumber);
 
           document.getElementById('image').onload = function() {
+
+            // Image moving effect
+            $('.image-container').animate({
+              left: '-=30',
+              easing: 'easeInOutSine'
+            }, 8000);
+
             $('#quote-box').show();
             $('#image').fadeIn(1000);
 
