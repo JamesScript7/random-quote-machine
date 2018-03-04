@@ -43,7 +43,7 @@ footer {
 
 footer ul li {
   display: inline;
-  padding-left: 4px;
+  padding-left: 2px;
   color: #303030;
   font-size: .8rem;
 }
@@ -80,7 +80,7 @@ img {
 #quote-box {
   padding: 8px;
   min-width: 300px;
-  width: 55%;
+  max-width: 45%;
   color: snow;
   font-size: 1.2em;
   background: rgba(24, 24, 24, 0.7);
