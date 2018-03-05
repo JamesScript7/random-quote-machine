@@ -7,6 +7,7 @@
 html {
   height: 100%;
   background-color: #080808;
+  overflow: hidden;
 }
 
 body {
@@ -67,22 +68,22 @@ footer ul li {
 
 img {
   display: inline-block;
-  min-width: 110%;
+  min-width: 100%;
   min-height: 100%;
 }
 
-/* @media only screen and (max-width: 667px) {
-  .image-container {
-    width: unset;
+@media only screen and (min-width: 667px) {
+  img {
+    min-width: 110%
   }
-} */
+}
 
 #quote-box {
   padding: 8px;
   min-width: 300px;
   max-width: 45%;
   color: snow;
-  font-size: 1.2em;
+  font-size: 1.4em;
   background: rgba(24, 24, 24, 0.7);
   /* FLEX BOX */
   display: flex;
@@ -121,17 +122,12 @@ span#btn {
 }
 
 /* States of #quote-btn */
-#quote-btn:active, #quote-btn:hover {
+/* #quote-btn:active, #quote-btn:hover {
   background-color: #DBDC19;
   color: #505050;
   transition: all 1s ease;
-}
+} */
 
 #quote-btn:focus {
   outline: none;
 }
-
-/* #quote-box:hover {
-transform: scale(1.02);
-transition: all 800ms linear;
-} */
