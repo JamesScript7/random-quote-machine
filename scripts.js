@@ -27,9 +27,6 @@ $(document).ready(function() {
     authorHashTag,
     fullQuote;
 
-  // Gets JSON once and stores it in quoteJSON
-  getJSON();
-
   // Random Number Generators
   function randomQuoteNum(x) {
     return (x.length * Math.random() << 0);
@@ -62,6 +59,11 @@ $(document).ready(function() {
       },
       success: function(data) {
         quoteJSON = JSON.parse(data);
+        rand = randomQuoteNum(quoteJSON);
+
+        // Prep Quote string
+        authorHashTag = quoteJSON[rand].name.replace(/\s/g, '');
+        fullQuote = tweetFormat(quoteJSON[rand].quote, authorHashTag);
       },
       cache: 'false'
     });
@@ -69,8 +71,8 @@ $(document).ready(function() {
 
   // Main function that retrieves and loads the content.
   function loadContent() {
-    imageNumber = randomImgNum();
     rand = randomQuoteNum(quoteJSON);
+    imageNumber = randomImgNum();
 
     $('#image').fadeOut(1000, function() {
       $('#image').attr('src', backgroundImg + imageNumber);
@@ -85,9 +87,6 @@ $(document).ready(function() {
         }, 100);
       },
       success: function() {
-        // Prep Quote string
-        authorHashTag = quoteJSON[rand].name.replace(/\s/g, '');
-        fullQuote = tweetFormat(quoteJSON[rand].quote, authorHashTag);
 
         // Set image
         document.getElementById('image').onload = function() {
@@ -129,6 +128,9 @@ $(document).ready(function() {
 
   // Initializes image and quote
   loadContent();
+
+  // Gets JSON once and stores it in quoteJSON
+  getJSON();
 
   // Image and quote refreshes on button click
   $('#quote-btn').click(function() {
