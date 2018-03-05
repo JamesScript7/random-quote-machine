@@ -1,9 +1,12 @@
+'use strict';
+
 $(document).ready(function() {
   $('#quote-box').hide();
 
   // Image related
   var backgroundImg,
-      movePixel = 60;
+      movePixel = 150,
+      imageNumber = randomImgNum();
   // if mobile { load 1024x768 image else 2048x1536 }
   if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
     movePixel = 200;
@@ -13,7 +16,6 @@ $(document).ready(function() {
   }
 
   var
-    imageNumber = randomImgNum(),
     // Quote related
     quoteJSON = {},
     quoteField = document.getElementById('quote-field'),
@@ -31,15 +33,15 @@ $(document).ready(function() {
   // Random Number Generators
   function randomQuoteNum(x) {
     return (x.length * Math.random() << 0);
-  };
+  }
   function randomImgNum() {
     return Math.round(Math.random() * 1084);
   }
 
   // Tweet formatter
   function tweetFormat(quote, author) {
-    var res = quote;
-    var lenWithoutAuthor = 119 - author.length;
+    var res = quote,
+        lenWithoutAuthor = 119 - author.length;
 
     if (quote.length > lenWithoutAuthor) {
       res = quote.substring(0, lenWithoutAuthor) + '...';
@@ -71,57 +73,57 @@ $(document).ready(function() {
     rand = randomQuoteNum(quoteJSON);
 
     $('#image').fadeOut(1000, function() {
-      $.ajax({
-        url: (backgroundImg + imageNumber),
-        error: function(err) {
-          // console.log(err.status);
-          setTimeout(function() {
-            loadContent();
-          }, 100);
-        },
-        success: function() {
-          // Prep Quote string
-          authorHashTag = quoteJSON[rand].name.replace(/\s/g, '');
-          fullQuote = tweetFormat(quoteJSON[rand].quote, authorHashTag);
+      $('#image').attr('src', backgroundImg + imageNumber);
+    });
 
-          // Set image
-          $('#image').attr('src', backgroundImg + imageNumber);
+    $.ajax({
+      url: (backgroundImg + imageNumber),
+      error: function(err) {
+        // console.log(err.status);
+        setTimeout(function() {
+          loadContent();
+        }, 100);
+      },
+      success: function() {
+        // Prep Quote string
+        authorHashTag = quoteJSON[rand].name.replace(/\s/g, '');
+        fullQuote = tweetFormat(quoteJSON[rand].quote, authorHashTag);
 
-          document.getElementById('image').onload = function() {
+        // Set image
+        document.getElementById('image').onload = function() {
 
-            // Image resetter
-            $('.image-container').stop();
-            $('.image-container').css('left', 0);
+          // Image resetter
+          $('.image-container').stop();
+          $('.image-container').css('left', 0);
 
-            // Image moving effect
-            $('.image-container').animate({
-              left: ('-=' + movePixel),
-              easing: 'easeInOutSine'
-            }, 9000);
+          // Image moving effect
+          $('.image-container').animate({
+            left: ('-=' + movePixel),
+            easing: 'linear'
+          }, 15000);
 
-            $('#quote-box').show();
-            $('#image').fadeIn(1000);
+          $('#quote-box').show();
+          $('#image').fadeIn(1000);
 
-            // Quote box content
-            quoteField.innerHTML = `${quoteJSON[rand].quote} - ${quoteJSON[rand].name}`;
-            tweetBtn.innerHTML = '';
+          // Quote box content
+          quoteField.innerHTML = `${quoteJSON[rand].quote} - ${quoteJSON[rand].name}`;
+          tweetBtn.innerHTML = '';
 
-            $('#quote-field').hide();
-            $('#quote-field').fadeIn(1100);
+          $('#quote-field').hide();
+          $('#quote-field').fadeIn(1100);
 
-            twttr.widgets.createShareButton(
-              '/',
-              document.getElementById('btn'),
-              {
-                text: fullQuote,
-                hashtags: authorHashTag,
-                via: 'itJamesKim'
-              }
-            );
+          twttr.widgets.createShareButton(
+            '/',
+            document.getElementById('btn'),
+            {
+              text: fullQuote,
+              hashtags: authorHashTag,
+              via: 'itJamesKim'
+            }
+          );
 
-          }
         }
-      });
+      }
     });
   }
 
