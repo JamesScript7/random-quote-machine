@@ -1,7 +1,10 @@
 'use strict';
 
 $(document).ready(function() {
+  // Quote box fading effect
   $('#quote-box').hide();
+  $('#quote-btn').hide();
+  $('.auto-btn-stop').hide();
 
   // Image related
   var backgroundImg,
@@ -19,13 +22,17 @@ $(document).ready(function() {
     // Quote related
     quoteJSON = {},
     quoteField = document.getElementById('quote-field'),
+    quoteAuthor = document.getElementById('author-field'),
     quoteButton = document.getElementById('quote-btn'),
     tweetBtn = document.getElementById('btn'),
     urlQuotes = 'https://gist.githubusercontent.com/dmakk767/9375ff01aff76f1788aead1df9a66338/raw/491f8c2e91b7d3b8f1c8230e32d9c9bc1a1adfa6/Quotes.json%2520',
     // Quote Parsing
     rand,
     authorHashTag,
-    fullQuote;
+    fullQuote,
+    // Slideshow
+    slide = false,
+    setSlide;
 
   // Random Number Generators
   function randomQuoteNum(x) {
@@ -59,24 +66,16 @@ $(document).ready(function() {
       },
       success: function(data) {
         quoteJSON = JSON.parse(data);
-        rand = randomQuoteNum(quoteJSON);
 
-        // Prep Quote string
-        authorHashTag = quoteJSON[rand].name.replace(/\s/g, '');
-        fullQuote = tweetFormat(quoteJSON[rand].quote, authorHashTag);
       },
       cache: 'false'
     });
   };
 
   // Main function that retrieves and loads the content.
-  function loadContent() {
+  function loadContent(slide) {
     rand = randomQuoteNum(quoteJSON);
     imageNumber = randomImgNum();
-
-    $('#image').fadeOut(1000, function() {
-      $('#image').attr('src', backgroundImg + imageNumber);
-    });
 
     $.ajax({
       url: (backgroundImg + imageNumber),
@@ -88,6 +87,18 @@ $(document).ready(function() {
       },
       success: function() {
 
+        // Quote box fading effect
+        $('#quote-box').fadeOut(1100);
+        $('#quote-btn').fadeOut(1100);
+
+        $('#image').fadeOut(1000, function() {
+          $('#image').attr('src', backgroundImg + imageNumber);
+          // Prep Quote string
+          authorHashTag = quoteJSON[rand].name.replace(/\s/g, '');
+          fullQuote = tweetFormat(quoteJSON[rand].quote, authorHashTag);
+
+        });
+
         // Set image
         document.getElementById('image').onload = function() {
 
@@ -95,21 +106,29 @@ $(document).ready(function() {
           $('.image-container').stop();
           $('.image-container').css('left', 0);
 
+          $('#quote-box').fadeIn(1100);
+
+          // Quote box fading effect
+          if (slide) {
+            $('.auto-btn').hide();
+            $('#quote-btn').hide();
+            $('#btn').hide();
+          } else {
+            $('#quote-btn').fadeIn(1100);
+          }
+
           // Image moving effect
           $('.image-container').animate({
             left: ('-=' + movePixel),
             easing: 'linear'
           }, 15000);
 
-          $('#quote-box').show();
           $('#image').fadeIn(1000);
 
           // Quote box content
-          quoteField.innerHTML = `${quoteJSON[rand].quote} - ${quoteJSON[rand].name}`;
+          quoteField.innerHTML = `${quoteJSON[rand].quote}`;
+          quoteAuthor.innerHTML = `- ${quoteJSON[rand].name}`;
           tweetBtn.innerHTML = '';
-
-          $('#quote-field').hide();
-          $('#quote-field').fadeIn(1100);
 
           twttr.widgets.createShareButton(
             '/',
@@ -131,6 +150,34 @@ $(document).ready(function() {
 
   // Gets JSON once and stores it in quoteJSON
   getJSON();
+
+  // AUTO MODE CLICK
+  $('.auto-btn').click(function() {
+    var setSlide = setInterval(function(){
+      loadContent(slide);
+    }, 14000);
+
+    slide = true;
+    loadContent(slide);
+
+    // Slideshow mode prep
+    $('.auto-btn').hide();
+    $('.auto-btn-stop').show();
+    $('.footer').fadeOut();
+
+    // AUTO MODE STOP
+    $('.auto-btn-stop').click(function() {
+      clearInterval(setSlide);
+      slide = false;
+
+      // Stop slideshow mode prep
+      $(this).fadeOut();
+      $('.auto-btn').fadeIn();
+      $('#quote-btn').fadeIn();
+      $('#btn').fadeIn();
+      $('.footer').fadeIn();
+    });
+  });
 
   // Image and quote refreshes on button click
   $('#quote-btn').click(function() {
