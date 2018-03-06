@@ -55,7 +55,7 @@ $(document).ready(function() {
       error: function() {
         setTimeout(function(){
           getJSON();
-        }, 100);
+        }, 50);
       },
       success: function(data) {
         quoteJSON = JSON.parse(data);
@@ -84,7 +84,7 @@ $(document).ready(function() {
         // console.log(err.status);
         setTimeout(function() {
           loadContent();
-        }, 100);
+        }, 50);
       },
       success: function() {
 
