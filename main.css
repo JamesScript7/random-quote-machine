@@ -144,7 +144,7 @@ img {
   text-align: right;
 }
 
-span#btn {
+span #btn {
   height: 22px;
 }
 
@@ -167,9 +167,12 @@ span#btn {
   outline: none;
 }
 
+/* Slide show toggler */
 .auto-btn, .auto-btn-stop {
-  color: snow;
   position: fixed;
+  background: rgba(20, 20, 20, 0.2);
+  color: snow;
+  padding: 1px 4px;
   top: 8px;
   right: 8px;
 }
