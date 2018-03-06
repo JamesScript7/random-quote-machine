@@ -80,9 +80,9 @@ $(document).ready(function() {
     $.ajax({
       url: (backgroundImg + imageNumber),
       error: function(err) {
-        // console.log(err.status);
         setTimeout(function() {
-          loadContent();
+          loadContent(slide);
+          // console.log(err.status);
         }, 50);
       },
       success: function() {
@@ -155,7 +155,7 @@ $(document).ready(function() {
   $('.auto-btn').click(function() {
     var setSlide = setInterval(function(){
       loadContent(slide);
-    }, 14000);
+    }, 15000);
 
     slide = true;
     loadContent(slide);

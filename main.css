@@ -7,7 +7,6 @@
 html {
   height: 100%;
   background-color: #080808;
-  overflow: hidden;
 }
 
 body {
@@ -146,6 +145,7 @@ img {
 }
 
 #author-field {
+  margin-top: 4px;
   text-align: right;
 }
 
@@ -175,8 +175,8 @@ span#btn {
 /* Slide show toggler */
 .auto-btn, .auto-btn-stop {
   position: fixed;
-  background: rgba(20, 20, 20, 0.2);
-  color: snow;
+  background: rgba(255, 255, 255, 0.2);
+  color: #597180;
   padding: 1px 4px;
   top: 8px;
   right: 8px;
