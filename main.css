@@ -25,7 +25,8 @@ a {
 }
 
 a:link, a:visited {
-  color: #303030;
+  /* color: #303030; */
+  color: snow;
 }
 
 a:hover, a:active {
@@ -36,7 +37,7 @@ a:hover, a:active {
 
 footer {
   display: block;
-  background-color: snow;
+  background: rgba(24, 24, 24, 0.3);
   width: 100%;
   padding: 4px 0;
   text-align: center;
@@ -45,7 +46,8 @@ footer {
 footer ul li {
   display: inline;
   padding-left: 2px;
-  color: #303030;
+  color: snow;
+  /* color: #303030; */
   font-size: .8rem;
 }
 
@@ -106,7 +108,7 @@ img {
   padding: 8px;
   color: snow;
   font-size: 1.4em;
-  background: rgba(24, 24, 24, 0.7);
+  background: rgba(24, 24, 24, 0.6);
   /* FLEX BOX */
   display: flex;
   flex-direction: column;
