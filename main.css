@@ -85,6 +85,10 @@ img {
     color: #505050;
     transition: all 1s ease;
   }
+
+  #quote-box {
+    font-size: 1.5em;
+  }
 }
 
 /* MOBILE MODE */
@@ -93,6 +97,10 @@ img {
     position: fixed;
     bottom: 50px;
     right: 20px;
+  }
+
+  #quote-box {
+    font-size: 1.2em;
   }
 }
 
@@ -107,7 +115,6 @@ img {
 #quote-box {
   padding: 8px;
   color: snow;
-  font-size: 1.4em;
   background: rgba(24, 24, 24, 0.6);
   /* FLEX BOX */
   display: flex;
