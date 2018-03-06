@@ -77,6 +77,12 @@ img {
   img {
     min-width: 110%
   }
+
+  #quote-btn:active, #quote-btn:hover {
+    background-color: #DBDC19;
+    color: #505050;
+    transition: all 1s ease;
+  }
 }
 
 /* MOBILE MODE */
@@ -133,9 +139,3 @@ span#btn {
 #quote-btn:focus {
   outline: none;
 }
-
-/* #quote-btn:active, #quote-btn:hover {
-  background-color: #DBDC19;
-  color: #505050;
-  transition: all 1s ease;
-} */
