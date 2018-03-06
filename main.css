@@ -110,12 +110,17 @@ img {
   #quote-box {
     font-size: 1.2em;
   }
+
   footer ul li {
     font-size: .7rem;
   }
 
   .auto-btn {
     font-size: .7em;
+  }
+
+  span#btn {
+    top: 2px;
   }
 }
 
@@ -144,7 +149,7 @@ img {
   text-align: right;
 }
 
-span #btn {
+span#btn {
   height: 22px;
 }
 
