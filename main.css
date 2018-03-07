@@ -80,7 +80,7 @@ img {
   }
 
   footer ul li {
-    font-size: .9rem;
+    font-size: .7rem;
   }
 
   #quote-btn:active, #quote-btn:hover {
@@ -90,7 +90,7 @@ img {
   }
 
   #quote-box {
-    font-size: 1.7em;
+    font-size: 1.5em;
   }
 
   span#btn {
@@ -150,6 +150,7 @@ img {
 }
 
 span#btn {
+  display: inherit;
   height: 22px;
 }
 
@@ -174,9 +175,10 @@ span#btn {
 
 /* Slide show toggler */
 .auto-btn, .auto-btn-stop {
+  font-size: .7rem;
   position: fixed;
-  background: rgba(255, 255, 255, 0.2);
-  color: #597180;
+  background: rgba(255, 255, 255, 0.1);
+  color: snow;
   padding: 1px 4px;
   top: 8px;
   right: 8px;
