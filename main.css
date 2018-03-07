@@ -92,10 +92,6 @@ img {
   #quote-box {
     font-size: 1.5em;
   }
-
-  span#btn {
-    margin-bottom: 2px;
-  }
 }
 
 /* MOBILE MODE */
@@ -116,10 +112,6 @@ img {
 
   .auto-btn {
     font-size: .7em;
-  }
-
-  span#btn {
-    top: 2px;
   }
 }
 
@@ -151,6 +143,7 @@ img {
 
 span#btn {
   display: inherit;
+  top: 2px;
   height: 22px;
 }
 
