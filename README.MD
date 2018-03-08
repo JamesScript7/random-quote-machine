@@ -17,9 +17,14 @@
 5. Added a social media share button to twitter.
 6. Made it mobile responsive.
 7. Background image changes with each button click.
+8. Added slide show mode.
 
 ## To do:
-1. Add Facebook link
-2. Add quote API for a larger database of quotes?
-3. Refactor to ES6?
-4. Add favicon?
+1. Add quote API for a larger database of quotes?
+2. Refactor to ES6?
+
+[Link to the webpage!](http://peaceful-name.surge.sh/)
+
+*Screenshot:*
+
+![alt text](https://raw.githubusercontent.com/JamesScript7/random-quote-machine/master/images/screenshot.png)
