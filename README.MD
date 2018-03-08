@@ -9,6 +9,12 @@
 
 **Skills:** HTML, CSS, JS, RegExp, jQuery, and flexbox.
 
+[Link to the webpage!](http://peaceful-name.surge.sh/)
+
+*Screenshot:*
+
+![alt text](https://raw.githubusercontent.com/JamesScript7/random-quote-machine/master/images/screenshot.png)
+
 ## Incremental Steps taken:
 1. Extracted quotes from a local source.
 2. GET requested a background image:  (https://unsplash.it/1024/768/?random)
@@ -22,9 +28,3 @@
 ## To do:
 1. Add quote API for a larger database of quotes?
 2. Refactor to ES6?
-
-[Link to the webpage!](http://peaceful-name.surge.sh/)
-
-*Screenshot:*
-
-![alt text](https://raw.githubusercontent.com/JamesScript7/random-quote-machine/master/images/screenshot.png)
