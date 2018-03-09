@@ -3,11 +3,15 @@
 ## A simple quote generator.
 * Displays a random quote from a JSON.
 
-* Displays a random motivational image.
+* Displays a randomized motivational image.
 
-* Hopefully the quotes provide inspiration || motivation for you :)
+* Tweet the quote with the twitter widget.
 
-**Skills:** HTML, CSS, JS, RegExp, jQuery, and flexbox.
+* Slideshow mode that automaticaly renders the next random image and quote every 13 seconds.
+
+Hopefully the quotes provide inspiration || motivation for you :)
+
+**Skills:** HTML, CSS, JS, RegExp, jQuery, and Flexbox.
 
 [Link to the webpage!](http://peaceful-name.surge.sh/)
 
@@ -25,6 +29,6 @@
 7. Background image changes with each button click.
 8. Added slide show mode.
 
-## To do:
+## Future Upgrade:
 1. Add quote API for a larger database of quotes?
 2. Refactor to ES6?
