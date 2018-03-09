@@ -13,7 +13,7 @@ Hopefully the quotes provide inspiration || motivation for you :)
 
 **Skills:** HTML, CSS, JS, RegExp, jQuery, and Flexbox.
 
-[Link to the webpage!](http://peaceful-name.surge.sh/)
+[Link to the webpage!](http://peaceful-name.surge.sh/){:target="_blank"}
 
 *Screenshot:*
 
