@@ -29,6 +29,6 @@ Hopefully the quotes provide inspiration || motivation for you :)
 7. Background image changes with each button click.
 8. Added slide show mode.
 
-## Future Upgrade:
+## Future Upgrades:
 1. Add quote API for a larger database of quotes?
 2. Refactor to ES6?
