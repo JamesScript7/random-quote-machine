@@ -1,9 +1,9 @@
 # 101 Famous Quotes!
 
 ## A simple quote generator.
-* Display a random quote from a JSON.
+* Display a random quote from JSON.
 
-* Display a randomized motivational image.
+* Display a randomized wallpaper.
 
 * Tweet the quote with the twitter widget.
 
@@ -11,7 +11,7 @@
 
 Hopefully the quotes provide inspiration || motivation for you :)
 
-**Skills:** HTML, CSS, JS, RegExp, jQuery, and Flexbox.
+**SKILLS:** HTML, CSS, JS, RegExp, jQuery, and Flexbox.
 
 [Link to the webpage!](http://peaceful-name.surge.sh/)
 
@@ -29,5 +29,5 @@ Hopefully the quotes provide inspiration || motivation for you :)
 7. Added slideshow mode.
 
 ## Future Upgrades:
-1. Use a larger quote API.
+1. Larger quote API.
 2. Refactor to ES6.
