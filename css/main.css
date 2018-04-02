@@ -80,7 +80,7 @@ img {
   }
 
   footer ul li {
-    font-size: .7rem;
+    font-size: .9rem;
   }
 
   #quote-btn:active, #quote-btn:hover {
@@ -167,7 +167,7 @@ span#btn {
 
 /* Slide show toggler */
 .auto-btn, .auto-btn-stop {
-  font-size: .7rem;
+  font-size: .9rem;
   position: fixed;
   background: rgba(255, 255, 255, 0.1);
   color: snow;
