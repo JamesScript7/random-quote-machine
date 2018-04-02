@@ -1,7 +1,6 @@
 'use strict';
-
 $(document).ready(function() {
-  // Quote box fading effect
+  // Hide quote box initially, so it can fade in with background image.
   $('#quote-box').hide();
   $('#quote-btn').hide();
   $('.auto-btn-stop').hide();
@@ -10,8 +9,8 @@ $(document).ready(function() {
   var backgroundImg,
       movePixel = 150,
       imageNumber = randomImgNum();
-  // if mobile { load 1024x768 image else 2048x1536 }
-  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+  // if mobile device, load 1024x768 image or else 2048x1536
+  if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
     movePixel = 200;
     backgroundImg = 'https://picsum.photos/1024/768/?image=';
   } else {
@@ -34,7 +33,7 @@ $(document).ready(function() {
     slide = false,
     setSlide;
 
-  // Random Number Generators
+  // Random Number Generators :)
   function randomQuoteNum(x) {
     return (x.length * Math.random() << 0);
   }
@@ -66,7 +65,6 @@ $(document).ready(function() {
       },
       success: function(data) {
         quoteJSON = JSON.parse(data);
-
       },
       cache: 'false'
     });
@@ -86,7 +84,6 @@ $(document).ready(function() {
         }, 50);
       },
       success: function() {
-
         // Quote box fading effect
         $('#quote-box').fadeOut(1100);
         $('#quote-btn').fadeOut(1100);
@@ -96,40 +93,34 @@ $(document).ready(function() {
           // Prep Quote string
           authorHashTag = quoteJSON[rand].name.replace(/\s/g, '');
           fullQuote = tweetFormat(quoteJSON[rand].quote, authorHashTag);
-
         });
 
-        // Set image
+        // When the image has finished loading!
         document.getElementById('image').onload = function() {
-
           // Image resetter
           $('.image-container').stop();
           $('.image-container').css('left', 0);
 
-          $('#quote-box').fadeIn(1100);
-
           // Quote box fading effect
+          $('#quote-box').fadeIn(1100);
           if (slide) {
             $('.auto-btn').hide();
             $('#quote-btn').hide();
-            $('#btn').hide();
+            // $('#btn').hide();
           } else {
             $('#quote-btn').fadeIn(1100);
           }
-
           // Image moving effect
           $('.image-container').animate({
             left: ('-=' + movePixel),
             easing: 'linear'
           }, 15000);
-
           $('#image').fadeIn(1000);
 
           // Quote box content
           quoteField.innerHTML = `${quoteJSON[rand].quote}`;
           quoteAuthor.innerHTML = `- ${quoteJSON[rand].name}`;
           tweetBtn.innerHTML = '';
-
           twttr.widgets.createShareButton(
             '/',
             document.getElementById('btn'),
@@ -138,19 +129,16 @@ $(document).ready(function() {
               hashtags: authorHashTag,
               via: 'itJamesKim'
             }
-          );
-
-        }
+          ); // End of twitter widget.
+        } // End of image on load function.
       }
-    });
-  }
+    }); // End of background image ajax.
+  } // End of loadContent function.
 
   // Initializes image and quote
   loadContent();
-
   // Gets JSON once and stores it in quoteJSON
   getJSON();
-
   // AUTO MODE CLICK
   $('.auto-btn').click(function() {
     var setSlide = setInterval(function(){
@@ -169,12 +157,11 @@ $(document).ready(function() {
     $('.auto-btn-stop').click(function() {
       clearInterval(setSlide);
       slide = false;
-
       // Stop slideshow mode prep
       $(this).fadeOut();
       $('.auto-btn').fadeIn();
       $('#quote-btn').fadeIn();
-      $('#btn').fadeIn();
+      // $('#btn').fadeIn();
       $('.footer').fadeIn();
     });
   });
@@ -183,7 +170,6 @@ $(document).ready(function() {
   $('#quote-btn').click(function() {
     loadContent();
   });
-
   // function pickRandomQuote(obj) {
     // // This will put the keys in an array so we can use the index for random assignment.
     // var
