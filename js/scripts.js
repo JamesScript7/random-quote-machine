@@ -17,14 +17,13 @@ $(document).ready(function() {
     backgroundImg = 'https://picsum.photos/2048/1536/?image=';
   }
 
+  // Quote related
   var
-    // Quote related
     quoteJSON = {},
     quoteField = document.getElementById('quote-field'),
     quoteAuthor = document.getElementById('author-field'),
-    quoteButton = document.getElementById('quote-btn'),
     tweetBtn = document.getElementById('btn'),
-    urlQuotes = 'https://gist.githubusercontent.com/dmakk767/9375ff01aff76f1788aead1df9a66338/raw/491f8c2e91b7d3b8f1c8230e32d9c9bc1a1adfa6/Quotes.json%2520',
+    urlQuotes = 'https://gist.githubusercontent.com/JamesScript7/9071c8419edaca2c7ced77c18c4236f1/raw/ef1161709601eb71db6fa7da99c657a3f4bd2fda/Quotes.json',
     // Quote Parsing
     rand,
     authorHashTag,
@@ -121,15 +120,17 @@ $(document).ready(function() {
           quoteField.innerHTML = `${quoteJSON[rand].quote}`;
           quoteAuthor.innerHTML = `- ${quoteJSON[rand].name}`;
           tweetBtn.innerHTML = '';
-          twttr.widgets.createShareButton(
-            '/',
-            document.getElementById('btn'),
-            {
-              text: fullQuote,
-              hashtags: authorHashTag,
-              via: 'itJamesKim'
-            }
-          ); // End of twitter widget.
+          if (twttr) {
+            twttr.widgets.createShareButton(
+              '/',
+              document.getElementById('btn'),
+              {
+                text: fullQuote,
+                hashtags: authorHashTag,
+                via: 'itJamesKim'
+              }
+            ); // End of twitter widget.
+          }
         } // End of image on load function.
       }
     }); // End of background image ajax.
@@ -161,7 +162,6 @@ $(document).ready(function() {
       $(this).fadeOut();
       $('.auto-btn').fadeIn();
       $('#quote-btn').fadeIn();
-      // $('#btn').fadeIn();
       $('.footer').fadeIn();
     });
   });
