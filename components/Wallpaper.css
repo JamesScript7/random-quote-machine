@@ -1,0 +1,13 @@
+.image-container {
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  width: 100%;
+  z-index: -1;
+}
+
+img {
+  display: inline-block;
+  min-width: 100%;
+  min-height: 100%;
+}

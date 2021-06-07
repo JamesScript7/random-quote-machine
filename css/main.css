@@ -1,3 +1,16 @@
+/* GLOBALS */
+/* TODO: move most basic/critical ones into index.html */
+html {
+  height: 100%;
+  background-color: #fff;
+}
+
+html, body, div, footer, ul {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: Helvetica, Verdana, sans-serif;
   height: 100%;
@@ -7,32 +20,7 @@ body {
   align-items: center;
   justify-content: center;
 }
-a {
-  text-decoration: none;
-}
-a:link, a:visited {
-  /* color: #303030; */
-  color: snow;
-}
-a:hover, a:active {
-  color: #9947EA;
-  font-weight: bold;
-  transition: color 0.4s linear;
-}
-footer {
-  display: block;
-  background: rgba(20, 20, 20, 0.3);
-  /* background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)); */
-  width: 100%;
-  padding: 4px 0;
-  text-align: center;
-}
-footer ul li {
-  display: inline;
-  padding-left: 2px;
-  color: snow;
-  /* color: #303030; */
-}
+
 #container {
   width: 100%;
   height: 100vh;
@@ -41,18 +29,7 @@ footer ul li {
   align-items: center;
   justify-content: center;
 }
-.image-container {
-  background-size: cover;
-  background-position: center;
-  position: fixed;
-  width: 100%;
-  z-index: -1;
-}
-img {
-  display: inline-block;
-  min-width: 100%;
-  min-height: 100%;
-}
+
 /* DESKTOP MODE */
 @media only screen and (min-width: 667px) {
   img {
@@ -70,6 +47,7 @@ img {
     font-size: 1.5em;
   }
 }
+
 /* MOBILE MODE */
 @media only screen and (max-width: 450px) {
   #quote-btn {
@@ -84,6 +62,7 @@ img {
     font-size: .8rem;
   }
 }
+/* QUOTE */
 .quote-container {
   min-width: 300px;
   max-width: 45%;
@@ -127,7 +106,8 @@ span#btn {
 #quote-btn:focus {
   outline: none;
 }
-/* Slide show toggler */
+
+/* SLIDE SHOW TOGGLE BUTTON */
 .auto-btn, .auto-btn-stop {
   font-size: 1rem;
   position: fixed;
