@@ -1,33 +1,23 @@
-# 101 Famous Quotes!
+# Screensaver with Famous Quotes
 
-## A simple quote generator.
-* Display a random quote from a JSON source.
+Project link: http://peaceful-name.surge.sh
 
-* Display a randomized wallpaper.
+**SKILLS:** Built with [Preact](https://preactjs.com/)
 
-* Able to tweet the quote with the twitter widget.
+## What it does:
+* Displays a quote from a [JSON source](https://gist.githubusercontent.com/JamesScript7/9071c8419edaca2c7ced77c18c4236f1/raw/ef1161709601eb71db6fa7da99c657a3f4bd2fda/Quotes.json).
 
-* Slide-show mode automatically renders the next random image and quote every 15 seconds.
+* Displays a wallpaper from [picsum](https://picsum.photos).
 
-Hopefully the quotes provide inspiration || motivation for you :)
+* Allows you to Tweet the quote with the [Tweet button](https://developer.twitter.com/en/docs/twitter-for-websites/tweet-button/overview).
 
-**SKILLS:** HTML, CSS, JS, RegExp, jQuery, and Flexbox.
-
-[Link to the webpage!](http://peaceful-name.surge.sh/)
+* Screensaver mode automatically renders the next set of images and quotes every 15 seconds.
 
 *Screenshot:*
 
 ![alt text](https://raw.githubusercontent.com/JamesScript7/random-quote-machine/master/images/screenshot.png)
 
-## Incremental Steps taken:
-1. Source the background image:  (https://picsum.photos/)
-2. Source quotes from an external source: (https://gist.github.com/dmakk767/9375ff01aff76f1788aead1df9a66338).
-3. Styled the website.
-4. Added a social media share button to twitter.
-5. Made it mobile responsive. (Mobile clients load a smaller, more appropriate size image.)
-6. Background images change with each button click.
-7. Added slide-show mode!
-
-## Future Upgrades:
-1. Larger quote API.
-2. Move quote box to the bottom in slide-show mode on the desktop.
+## Bonus:
+1. Responsive
+2. Optimization - Mobile clients load a smaller sized wallpaper.
+3. BEM methodolgy (CSS class naming convention)

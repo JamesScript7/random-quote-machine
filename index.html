@@ -9,32 +9,35 @@
       gtag('js', new Date());
       gtag('config', 'UA-116732093-2');*/
     </script>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="James Kim">
-    <meta name="description" content="Enjoy 101 randomized famous quotes, share them to twitter, or utilize the slidehow/screensaver mode!">
+    <meta name="description" content="A screensaver with some famous quotes which you can tweet!">
     <meta name="theme-color" content="#9947EA">
 
     <title>
-      101 Famous Quotes!
+      101 Famous Quotes
     </title>
-
-    <!-- Was recommended by google Audit to place critical CSS here. -->
-    <style>
-      /* html {
-        height: 100%;
-        background-color: #fff;
-      }
-
-      html, body, div, footer, ul {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      } */
-    </style>
-
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- Recommended by Google Lighthouse to place critical CSS here. -->
+    <style>
+      body, ul {
+        margin: 0;
+        padding: 0;
+      }
+
+      #container {
+        font-family: Helvetica, Verdana, sans-serif;
+        background-color: #000;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
 
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="components/Wallpaper.css">
@@ -42,36 +45,30 @@
 
     <!-- <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
   </head>
-
-  <body>
-    <div id="container" role="main">
-
-      <div class="image-container">
-        <img id="image" src="images/black.png" alt="Random background image">
-      </div>
-
-      <div>
-        <span class="auto-btn">Start slideshow</span>
-        <span class="auto-btn-stop">x</span>
-      </div>
-
-      <div class="quote-container">
-        <div id="quote-box">
-          <div id="quote-field"></div>
-          <div id="author-field"></div>
-          <span id="btn"></span>
-        </div>
-
-        <button id="quote-btn">Next Quote</button>
-      </div>
-
+  <body id="container">
+    <!-- <div class="image-container">
+      <img id="image" src="images/black.png" alt="Random background image">
     </div>
+    <div>
+      <span class="auto-btn">Start slideshow</span>
+      <span class="auto-btn-stop">x</span>
+    </div>
+    <div class="quote-container" role="main">
+      <div id="quote-box">
+        <div id="quote-field"></div>
+        <div id="author-field"></div>
+        <span id="btn"></span>
+      </div>
+      <button id="quote-btn">Next Quote</button>
+    </div> -->
+
     <!-- <script
       src="https://code.jquery.com/jquery-3.2.1.min.js"
       integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
       crossorigin="anonymous">
     </script>
     <script defer src="js/scripts.js"></script> -->
+
     <script type="module" src="index.js"></script>
   </body>
 </html>

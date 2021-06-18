@@ -1,48 +1,19 @@
-/* GLOBALS */
-/* TODO: move most basic/critical ones into index.html */
-html {
-  height: 100%;
-  background-color: #fff;
-}
-
-html, body, div, footer, ul {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: Helvetica, Verdana, sans-serif;
-  height: 100%;
-  /* FLEX BOX */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-#container {
-  width: 100%;
-  height: 100vh;
-  /* FLEX BOX */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 /* DESKTOP MODE */
 @media only screen and (min-width: 667px) {
   img {
     min-width: 110%
   }
+
   footer ul li {
     font-size: 1rem;
   }
+
   #quote-btn:active, #quote-btn:hover {
     background-color: #DBDC19;
     color: #505050;
     transition: all 1s ease;
   }
+
   #quote-box {
     font-size: 1.5em;
   }
@@ -55,13 +26,16 @@ body {
     bottom: 50px;
     right: 20px;
   }
+
   #quote-box {
     font-size: 1.2em;
   }
+
   footer ul li {
     font-size: .8rem;
   }
 }
+
 /* QUOTE */
 .quote-container {
   min-width: 300px;
@@ -70,6 +44,7 @@ body {
   flex-direction: column;
   justify-content: flex-end;
 }
+
 #quote-box {
   padding: 10px 12px;
   color: snow;
@@ -78,17 +53,21 @@ body {
   display: flex;
   flex-direction: column;
 }
+
 #quote-field {
   word-spacing: 1px;
 }
+
 #author-field {
   margin-top: 4px;
   text-align: right;
 }
+
 span#btn {
   display: inherit;
   height: 22px;
 }
+
 #quote-btn {
   display: inline-block;
   width: 100px;
@@ -102,6 +81,7 @@ span#btn {
   margin-top: 15px;
   margin-left: auto;
 }
+
 /* States of #quote-btn */
 #quote-btn:focus {
   outline: none;

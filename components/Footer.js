@@ -7,22 +7,18 @@ function Footer() {
   const currentYear = new Date().getFullYear();
 
   return html`
-    <footer class="footer">
+    <footer>
       <ul>
         <li>
           © ${currentYear} James Kim
         </li>
-        <li>
-          ·
-        </li>
+        <li> · </li>
         <li>
           <a href="https://github.com/JamesScript7" target="_blank" rel="noopener">GitHub</a>
         </li>
+        <li> · </li>
         <li>
-          ·
-        </li>
-        <li>
-          <a href="mailto:jameshkim7@gmail.com">Lets work together :)</a>
+          <a href="mailto:jameshkim7@gmail.com">Contact</a>
         </li>
       </ul>
     </footer>
