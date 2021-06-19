@@ -5,7 +5,7 @@ import htm from 'https://unpkg.com/htm?module';
 // COMPONENTS
 import Clock from './Clock.js';
 import Wallpaper from './Wallpaper.js';
-// import Footer from './QuoteBox.js';
+import QuoteBox from './QuoteBox.js';
 // import Footer from './Footer.js';
 
 const html = htm.bind(h);
@@ -36,6 +36,7 @@ class App extends Component {
       <div class="app__wrapper">
         <${Clock} />
         <${Wallpaper} />
+        <${QuoteBox} />
       </div>
     `;
   }

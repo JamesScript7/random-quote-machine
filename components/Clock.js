@@ -30,7 +30,7 @@ class Clock extends Component {
     const time = getDateTimeShort(this.state.time);
 
     return html`
-      <div class="clock__container">
+      <div class="clock">
         ${time}
       </div>
     `;

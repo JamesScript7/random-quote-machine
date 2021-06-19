@@ -19,7 +19,7 @@ function Wallpaper () {
   const imgURLString = `${imgURL}${randomNumberGeneratorForArrays(PICSUM_MAX_LENGTH)}`;
 
   return html`
-    <div class="wallpaper__container">
+    <div class="wallpaper">
       <img
         src="${imgURLString}"
         class="wallpaper__img"

@@ -10,12 +10,12 @@ $(document).ready(function() {
       movePixel = 150,
       imageNumber = randomImgNum();
   // if mobile device, load 1024x768 image or else 2048x1536
-  // if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-  //   movePixel = 200;
-  //   backgroundImg = 'https://picsum.photos/1024/768/?image=';
-  // } else {
-  //   backgroundImg = 'https://picsum.photos/2048/1536/?image=';
-  // }
+  if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+    movePixel = 200;
+    backgroundImg = 'https://picsum.photos/1024/768/?image=';
+  } else {
+    backgroundImg = 'https://picsum.photos/2048/1536/?image=';
+  }
 
   // Quote related
   var
@@ -30,15 +30,15 @@ $(document).ready(function() {
     fullQuote,
     // Slideshow
     slide = false,
-    setSlide;
+    // setSlide;
 
-  // // Random Number Generators :)
-  // function randomQuoteNum(x) {
-  //   return (x.length * Math.random() << 0);
-  // }
-  // function randomImgNum() {
-  //   return Math.round(Math.random() * 1084);
-  // }
+  // Random Number Generators :)
+  function randomQuoteNum(x) {
+    return (x.length * Math.random() << 0);
+  }
+  function randomImgNum() {
+    return Math.round(Math.random() * 1084);
+  }
 
   // Tweet formatter
   function tweetFormat(quote, author) {
@@ -170,14 +170,4 @@ $(document).ready(function() {
   $('#quote-btn').click(function() {
     loadContent();
   });
-  // function pickRandomQuote(obj) {
-    // // This will put the keys in an array so we can use the index for random assignment.
-    // var
-    //   keys = Object.keys(obj),
-    //   keyNum = keys.length * Math.random() << 0;
-    //
-    // quoteAuthor.innerHTML = `&nbsp - ${keys[keyNum]}`;
-    //
-    // return obj[keys[keyNum]];
-  // }
 });
