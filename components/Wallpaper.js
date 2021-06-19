@@ -11,16 +11,17 @@ const PICSUM_MAX_LENGTH = '1084';
 const imgURL = `https://picsum.photos/${IMG_RESOLUTION_WIDTH}/${IMG_RESOLUTION_HEIGHT}/?image=`;
 
 function Wallpaper () {
-  // onmount, set img src
-  // should handle button click
-  // should handle setInterval
-
+  // TODO:
+  // should handle button click from a button component elsewhere
+  // should handle setInterval when triggered in another component
   // const [imgSrc, setImageSrc] = useState();
+
+  const imgURLString = `${imgURL}${randomNumberGeneratorForArrays(PICSUM_MAX_LENGTH)}`;
 
   return html`
     <div class="wallpaper__container">
       <img
-        src="${imgURL}${randomNumberGeneratorForArrays(PICSUM_MAX_LENGTH)}"
+        src="${imgURLString}"
         class="wallpaper__img"
         alt="background wallpaper"
       />

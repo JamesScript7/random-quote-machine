@@ -1,9 +1,14 @@
 import { h, Component } from 'https://unpkg.com/preact@latest?module';
 import htm from 'https://unpkg.com/htm?module';
+import { getDateTimeShort } from '../js/helpers.js';
 
 const html = htm.bind(h);
 
+const ONE_SECOND = 1000;
+
 // TODO: update to functional component
+// NOTE: useEffect to clearInterval
+// https://stackoverflow.com/questions/62520334/how-to-clear-interval-in-functional-component-if-interval-is-set-in-a-function
 class Clock extends Component {
   state = {
     time: Date.now()
@@ -14,7 +19,7 @@ class Clock extends Component {
       this.setState({
         time: Date.now()
       });
-    }, 1000);
+    }, ONE_SECOND);
   }
 
   componentWillUnmount() {
@@ -22,13 +27,12 @@ class Clock extends Component {
   }
 
   render() {
-    let time = new Date(this.state.time).toLocaleTimeString();
+    const time = getDateTimeShort(this.state.time);
 
     return html`
-      <Fragment>
-        <span>Hey ${this.props.name}, the time is: </span>
-        <span>${time}</span>
-      </Fragment>
+      <div class="clock__container">
+        ${time}
+      </div>
     `;
   }
 }
