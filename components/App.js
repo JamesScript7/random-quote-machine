@@ -24,6 +24,12 @@ const html = htm.bind(h);
 // }
 // <${MyFunctionalComponent} note="Count" />
 
+// TODO:
+// Menu component
+// Quotebox component
+// Quote share button component
+// Clock component
+
 class App extends Component {
   render() {
     return html`

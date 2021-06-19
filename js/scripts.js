@@ -32,13 +32,13 @@ $(document).ready(function() {
     slide = false,
     setSlide;
 
-  // Random Number Generators :)
-  function randomQuoteNum(x) {
-    return (x.length * Math.random() << 0);
-  }
-  function randomImgNum() {
-    return Math.round(Math.random() * 1084);
-  }
+  // // Random Number Generators :)
+  // function randomQuoteNum(x) {
+  //   return (x.length * Math.random() << 0);
+  // }
+  // function randomImgNum() {
+  //   return Math.round(Math.random() * 1084);
+  // }
 
   // Tweet formatter
   function tweetFormat(quote, author) {
