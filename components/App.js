@@ -3,8 +3,9 @@ import { h, Component } from 'https://unpkg.com/preact@latest?module';
 import htm from 'https://unpkg.com/htm?module';
 
 // COMPONENTS
-import Wallpaper from './Wallpaper.js';
 import Clock from './Clock.js';
+import Wallpaper from './Wallpaper.js';
+// import Footer from './QuoteBox.js';
 // import Footer from './Footer.js';
 
 const html = htm.bind(h);
@@ -27,10 +28,8 @@ const html = htm.bind(h);
 
 // TODO:
 // Menu component
-// Quotebox component
 // Quote share button component
 
-// <${Footer} />
 class App extends Component {
   render() {
     return html`
