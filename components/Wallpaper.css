@@ -1,4 +1,4 @@
-.image-container {
+.wallpaper__container {
   background-size: cover;
   background-position: center;
   position: fixed;
@@ -6,7 +6,7 @@
   z-index: -1;
 }
 
-img {
+.wallpaper__img {
   display: inline-block;
   min-width: 100%;
   min-height: 100%;

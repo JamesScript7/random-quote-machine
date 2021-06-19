@@ -4,7 +4,7 @@ import htm from 'https://unpkg.com/htm?module';
 
 // COMPONENTS
 import Wallpaper from './Wallpaper.js';
-import Footer from './Footer.js';
+// import Footer from './Footer.js';
 
 const html = htm.bind(h);
 
@@ -30,12 +30,12 @@ const html = htm.bind(h);
 // Quote share button component
 // Clock component
 
+// <${Footer} />
 class App extends Component {
   render() {
     return html`
       <div class="app__wrapper">
         <${Wallpaper} />
-        <${Footer} />
       </div>
     `;
   }
