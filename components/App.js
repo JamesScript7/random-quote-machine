@@ -6,6 +6,7 @@ import htm from 'https://unpkg.com/htm?module';
 import Clock from './Clock.js';
 import Wallpaper from './Wallpaper.js';
 import QuoteBox from './QuoteBox.js';
+// import Menu from './Menu.js';
 // import Footer from './Footer.js';
 
 const html = htm.bind(h);
@@ -15,7 +16,6 @@ const html = htm.bind(h);
 //   const [count, setCount] = useState(0);
 //   const increment = () => setCount((currentCount) => currentCount + 1);
 //   const decrement = () => setCount((currentCount) => currentCount - 1);
-
 //   return html`
 //     <Fragment>
 //       <p>${props.note}: ${count}</p>
@@ -25,10 +25,6 @@ const html = htm.bind(h);
 //   `;
 // }
 // <${MyFunctionalComponent} note="Count" />
-
-// TODO:
-// Menu component
-// Quote share button component
 
 class App extends Component {
   render() {
