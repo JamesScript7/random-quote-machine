@@ -10,6 +10,7 @@
 .quotebox main {
   padding: 10px 12px;
   background: rgba(24, 24, 24, 0.5);
+  border-radius: 6px;
   min-width: 300px;
   max-width: 45%;
 }
@@ -20,10 +21,8 @@
 }
 
 .quotebox__quote {
-  display: inline-block;
   word-spacing: 2px;
   padding-bottom: 10px;
-  border-radius: 4px;
 }
 
 .quotebox__author {
@@ -46,6 +45,7 @@
   max-width: 100%;
   width: 100%;
   padding: 20px;
+  border-radius: 0;
   display: flex;
   justify-content: space-between;
 }
