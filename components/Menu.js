@@ -13,8 +13,11 @@ function Menu() {
     <div class="menu">
       <button class="menu__button" onClick="${() => setMenuToggle((currentMenuToggle) => !currentMenuToggle)}"></button>
       <div class="menu__content ${MenuToggle ? 'menu__content--active' : ''}">
-        <div>Screensaver Mode</div>
-        <div>Time display</div>
+        <h3>
+          Menu
+        </h3>
+        <div>Toggle Screensaver Mode</div>
+        <div>Toggle Time display</div>
         <div>Quote Layout center/bottom</div>
         <br/>
         <div>Icons made by <a href="https://flat-icons.com/" title="Flat Icons">Flat Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
