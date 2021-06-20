@@ -1,3 +1,12 @@
+#container {
+  font-family: Helvetica, Verdana, sans-serif;
+  background-color: #000;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* DESKTOP MODE */
 @media only screen and (min-width: 667px) {
   #quote-btn:active, #quote-btn:hover {
@@ -26,15 +35,4 @@
   footer ul li {
     font-size: .8rem;
   }
-}
-
-/* SLIDE SHOW TOGGLE BUTTON */
-.auto-btn, .auto-btn-stop {
-  font-size: 1rem;
-  position: fixed;
-  background: rgba(255, 255, 255, 0.1);
-  color: snow;
-  padding: 1px 4px;
-  top: 8px;
-  right: 8px;
 }

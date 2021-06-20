@@ -12,7 +12,7 @@ class QuoteBox extends Component {
 
   render() {
     return html`
-      <div class="quotebox quotebox--bottomlayout">
+      <div class="quotebox">
         <main>
           <div class="quotebox__quotewrapper">
             <q class="quotebox__quote">
