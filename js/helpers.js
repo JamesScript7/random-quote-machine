@@ -8,8 +8,8 @@ export function getDateTimeShort(time) {
   return new Date(time).toLocaleTimeString([], { timeStyle: 'short' });
 }
 
-// NOTE: will return boolean if mobile or not
-// FIXME: see if this is robust enough
+// NOTE: using UA is not reliable as feature detection (Modernizer)
+// but this is good enough for this application
 export function isMobile() {
   if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     return true;

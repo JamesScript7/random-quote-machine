@@ -1,12 +1,13 @@
-import { h, Component } from 'https://unpkg.com/preact@latest?module';
+import { h } from 'https://unpkg.com/preact@latest?module';
 // import { useState } from 'https://unpkg.com/preact@latest/hooks/dist/hooks.module.js?module';
 import htm from 'https://unpkg.com/htm?module';
+// import { isMobile } from '../js/helpers.js';
 
 // COMPONENTS
 import Clock from './Clock.js';
 import Wallpaper from './Wallpaper.js';
 import QuoteBox from './QuoteBox.js';
-// import Menu from './Menu.js';
+import Menu from './Menu.js';
 // import Footer from './Footer.js';
 
 const html = htm.bind(h);
@@ -26,16 +27,15 @@ const html = htm.bind(h);
 // }
 // <${MyFunctionalComponent} note="Count" />
 
-class App extends Component {
-  render() {
-    return html`
-      <div class="app__wrapper">
-        <${Clock} />
-        <${Wallpaper} />
-        <${QuoteBox} />
-      </div>
-    `;
-  }
+function App() {
+  return html`
+    <div class="app__wrapper">
+      <${Menu} />
+      <${Wallpaper} />
+      <${Clock} />
+      <${QuoteBox} />
+    </div>
+  `;
 }
 
 export default App;
