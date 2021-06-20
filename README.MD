@@ -5,7 +5,7 @@ Project link: http://peaceful-name.surge.sh
 **SKILLS:** Built with [Preact](https://preactjs.com/)
 
 ## What it does:
-* Displays a quote from a [JSON source](https://gist.githubusercontent.com/JamesScript7/9071c8419edaca2c7ced77c18c4236f1/raw/ef1161709601eb71db6fa7da99c657a3f4bd2fda/Quotes.json).
+* Displays a quote from a [JSON source](https://gist.githubusercontent.com/JamesScript7/9071c8419edaca2c7ced77c18c4236f1/raw/ef1161709601eb71db6fa7da99c657a3f4bd2fda/Quotes.json)
 
 * Displays a wallpaper from [picsum](https://picsum.photos).
 

@@ -11,15 +11,18 @@ class QuoteBox extends Component {
   // }
 
   render() {
+    const quoteText = 'Some really long quotes about life that is unique and profound...';
+    const quoteAuthor = 'James Kim';
+
     return html`
-      <div class="quotebox">
+      <div class="quotebox ${false ? 'quotebox--bottomlayout' : ''}">
         <main>
           <div class="quotebox__quotewrapper">
             <q class="quotebox__quote">
-              Some really long quotes about life that is unique and profound...
+              ${quoteText}
             </q>
             <em class="quotebox__author">
-              - James Kim
+              — ${quoteAuthor}
             </em>
           </div>
           <div class="quotebox__actions">
