@@ -1,5 +1,7 @@
 .quotebox {
+  font-size: 1.1rem;
   height: 100%;
+  color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,13 +9,13 @@
 
 .quotebox main {
   padding: 10px 12px;
-  color: #fff;
-  background: rgba(24, 24, 24, 0.4);
+  background: rgba(24, 24, 24, 0.5);
   min-width: 300px;
   max-width: 45%;
 }
 
 .quotebox__quote {
+  display: inline-block;
   word-spacing: 2px;
   padding-bottom: 10px;
   border-radius: 4px;
@@ -31,27 +33,32 @@
 }
 
 /* BOTTOM LAYOUT */
+.quotebox--bottomlayout.quotebox {
+  align-items: flex-end;
+}
+
 .quotebox--bottomlayout main {
-  /* padding: 10px 12px;
-  color: #fff;
-  background: rgba(24, 24, 24, 0.4);
-  min-width: 300px;
-  max-width: 45%; */
+  max-width: 100%;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.quotebox--bottomlayout .quotebox__quotewrapper {
+  display: flex;
+  flex-direction: row;
 }
 
 .quotebox--bottomlayout .quotebox__quote {
-  /* word-spacing: 2px;
-  padding-bottom: 10px;
-  border-radius: 4px; */
+  padding: 0;
 }
 
 .quotebox--bottomlayout .quotebox__author {
-  /* padding-bottom: 10px;
-  text-align: right; */
+  padding: 0 10px;
+
 }
 
 .quotebox--bottomlayout .quotebox__actions {
-  /* display: flex;
-  flex-direction: row;
-  justify-content: space-between; */
+  justify-content: flex-end;
 }
