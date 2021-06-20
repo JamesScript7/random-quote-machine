@@ -8,7 +8,6 @@ import Clock from './Clock.js';
 import Wallpaper from './Wallpaper.js';
 import QuoteBox from './QuoteBox.js';
 import Menu from './Menu.js';
-// import Footer from './Footer.js';
 
 const html = htm.bind(h);
 
