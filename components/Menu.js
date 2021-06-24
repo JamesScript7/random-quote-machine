@@ -28,11 +28,3 @@ function Menu() {
 }
 
 export default Menu;
-
-/*
-Menu
-screensaver mode
-time display toggle
-quote layout toggle
-footer
-*/

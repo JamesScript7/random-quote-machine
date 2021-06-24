@@ -22,9 +22,9 @@
 .menu__content {
   position: fixed;
   margin-top: 60px;
-  padding: 10px;
+  padding: 2px 12px 20px;
   width: 380px;
-  border: 3px solid #4169e1;
+  border-left: 6px solid #9947EA;
   border-top-left-radius: 6px;
   border-bottom-left-radius: 6px;
   background-color: #282828;
