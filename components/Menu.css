@@ -24,7 +24,7 @@
   margin-top: 60px;
   padding: 2px 12px 20px;
   width: 380px;
-  border-left: 6px solid #9947EA;
+  border-left: 6px solid #9947ea;
   border-top-left-radius: 6px;
   border-bottom-left-radius: 6px;
   background-color: #282828;
@@ -34,4 +34,14 @@
 
 .menu__content.menu__content--active {
   transform: translate3d(3px, 0, 0);
+}
+
+.menu__listitem {
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.menu__text {
+  padding-left: 10px;
 }
