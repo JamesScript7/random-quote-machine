@@ -11,21 +11,6 @@ import Menu from './Menu.js';
 
 const html = htm.bind(h);
 
-// EXAMPLE: FUNCTIONAL COMPONENT AND HOOKS
-// function MyFunctionalComponent(props) {
-//   const [count, setCount] = useState(0);
-//   const increment = () => setCount((currentCount) => currentCount + 1);
-//   const decrement = () => setCount((currentCount) => currentCount - 1);
-//   return html`
-//     <Fragment>
-//       <p>${props.note}: ${count}</p>
-//       <button onClick="${increment}">+ Increment button</button>
-//       <button onClick="${decrement}">- decrement button</button>
-//     </Fragment>
-//   `;
-// }
-// <${MyFunctionalComponent} note="Count" />
-
 function App() {
   return html`
     <div class="app__wrapper">

@@ -11,7 +11,7 @@ class QuoteBox extends Component {
   // }
 
   render() {
-    // FIXME: temporary setup
+    // TODO: temporary setup
     const quoteText = 'Some really long quotes about life that is unique and profound...';
     const quoteAuthor = 'James Kim';
 

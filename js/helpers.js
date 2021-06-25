@@ -1,8 +1,7 @@
 'use strict';
 
-// NOTE: Will return a (number >= 0) && (number < arrayLength)
-export function randomNumberGeneratorForArrays(arrayLength) {
-  return Math.floor(arrayLength * Math.random());
+export function getCurrentYear() {
+  return new Date().getFullYear();
 }
 
 // NOTE: will return short time format (H:MM [AM/PM])
@@ -18,4 +17,9 @@ export function isMobile() {
   }
 
   return false;
+}
+
+// NOTE: Will return a (number >= 0) && (number < arrayLength)
+export function randomNumberGeneratorForArrays(arrayLength) {
+  return Math.floor(arrayLength * Math.random());
 }
