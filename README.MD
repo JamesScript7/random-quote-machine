@@ -1,5 +1,7 @@
 # 101 Famous Quotes
 
+*Modernized for 2021* 😊
+
 ## Project link:
 http://peaceful-name.surge.sh
 
@@ -12,7 +14,7 @@ Built with [Preact](https://preactjs.com/)
 ```
 python -m SimpleHTTPServer
 ```
-### *Voilà!*
+### *Voilà!* 🎉
 
 ![alt text](https://raw.githubusercontent.com/JamesScript7/random-quote-machine/master/images/screenshot.png)
 

@@ -1,3 +1,7 @@
+/*
+LEGACY SCRIPT
+*/
+
 'use strict';
 $(document).ready(function() {
   // Hide quote box initially, so it can fade in with background image.
