@@ -1,7 +1,7 @@
 import { h } from 'https://unpkg.com/preact@latest?module';
 // import { useState } from 'https://unpkg.com/preact@latest/hooks/dist/hooks.module.js?module';
 import htm from 'https://unpkg.com/htm?module';
-import { randomNumberGeneratorForArrays } from '../js/helpers.js';
+import { randomNumberGenerator } from '../js/helpers.js';
 
 const html = htm.bind(h);
 
@@ -16,7 +16,7 @@ function Wallpaper () {
   // should handle setInterval when triggered in another component
   // const [imgSrc, setImageSrc] = useState();
 
-  const imgURLString = `${imgURL}${randomNumberGeneratorForArrays(PICSUM_MAX_LENGTH)}`;
+  const imgURLString = `${imgURL}${randomNumberGenerator(PICSUM_MAX_LENGTH)}`;
 
   return html`
     <div class="wallpaper">
