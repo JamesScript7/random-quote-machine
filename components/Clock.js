@@ -34,18 +34,18 @@ class Clock extends Component {
 }
 */
 
-function Clock() {
+function Clock({ displayTime }) {
   const [time, setTime] = useState(Date.now());
 
   useEffect(() => {
-    let timer = setInterval(() => setTime(Date.now()), ONE_SECOND);
+    const timer = displayTime ? setInterval(() => setTime(Date.now()), ONE_SECOND) : '';
     return () => clearInterval(timer);
   });
 
+  // NOTE: https://preactjs.com/guide/v8/api-reference/#preacth--preactcreateelement
+  const clockElement = h('div', { class: 'clock' }, getDateTimeShort(time));
   return html`
-    <div class="clock">
-      ${getDateTimeShort(time)}
-    </div>
+    ${displayTime && clockElement}
   `;
 }
 

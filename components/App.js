@@ -1,8 +1,6 @@
 import { h } from 'https://unpkg.com/preact@latest?module';
+import { useEffect, useState } from 'https://unpkg.com/preact@latest/hooks/dist/hooks.module.js?module';
 import htm from 'https://unpkg.com/htm?module';
-
-// import { isMobile } from '../js/helpers.js';
-import { Settings } from '../js/settings-context.js';
 
 // COMPONENTS
 import Clock from './Clock.js';
@@ -12,17 +10,46 @@ import Wallpaper from './Wallpaper.js';
 
 const html = htm.bind(h);
 
+const REFRESH_TIME = 1000 * 30;
+
 function App() {
+  const [state, setState] = useState({
+    displayTime: true,
+    alternateLayout: false,
+    screensaverMode: false,
+    cycle: 0,
+  });
+
+  useEffect(() => {
+    let timer;
+
+    if (state.screensaverMode) {
+      timer = setInterval(() => {
+        setState({
+          ...state,
+          alternateLayout: true,
+          cycle: state.cycle += 1,
+        });
+      }, REFRESH_TIME);
+    }
+
+    return () => clearInterval(timer);
+  }, [state.screensaverMode]);
+
   return html`
-    <div>
-      <${Settings.Provider} value="light">
-        <div class="app__wrapper">
-          <${Menu} />
-          <${Wallpaper} />
-          <${Clock} />
-          <${QuoteBox} />
-        </div>
-      <${Settings.Provider}>
+    <div class="app__wrapper">
+      <${Clock}
+        displayTime=${state.displayTime} />
+      <${Menu}
+        settings=${state}
+        setSettings=${setState} />
+      <${QuoteBox}
+        cycle=${state.cycle}
+        alternateLayout=${state.alternateLayout}
+        screensaverMode=${state.screensaverMode} />
+      <${Wallpaper}
+        cycle=${state.cycle}
+        screensaverMode=${state.screensaverMode} />
     </div>
   `;
 }

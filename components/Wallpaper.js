@@ -1,30 +1,36 @@
 import { h } from 'https://unpkg.com/preact@latest?module';
-// import { useState } from 'https://unpkg.com/preact@latest/hooks/dist/hooks.module.js?module';
+import { useEffect, useRef, useState } from 'https://unpkg.com/preact@latest/hooks/dist/hooks.module.js?module';
 import htm from 'https://unpkg.com/htm?module';
 
-import { randomNumberGenerator } from '../js/helpers.js';
+import { getImgURLString } from '../js/helpers.js';
 
 const html = htm.bind(h);
 
-const IMG_RESOLUTION_WIDTH = '2048';
-const IMG_RESOLUTION_HEIGHT = '1536';
-const PICSUM_MAX_LENGTH = '1084';
-const imgURL = `https://picsum.photos/${IMG_RESOLUTION_WIDTH}/${IMG_RESOLUTION_HEIGHT}/?image=`;
+function Wallpaper({ screensaverMode, cycle }) {
+  const [wallpaper, setWallpaper] = useState(getImgURLString());
+  const imgRef = useRef();
 
-function Wallpaper() {
-  // TODO:
-  // should handle button click from a button component elsewhere
-  // should handle setInterval when triggered in another component
-  // const [imgSrc, setImageSrc] = useState();
+  useEffect(() => {
+    if (screensaverMode) {
+      if (cycle > 0) {
+        setWallpaper(getImgURLString());
+      } else {
+        setTimeout(() => {
+          setWallpaper(getImgURLString());
+        }, 1000);
+      }
+    }
 
-  const imgURLString = `${imgURL}${randomNumberGenerator(PICSUM_MAX_LENGTH)}`;
+  }, [screensaverMode, cycle]);
 
   return html`
     <div class="wallpaper">
       <img
-        src="${imgURLString}"
+        ref=${imgRef}
+        src="${wallpaper}"
         class="wallpaper__img"
         alt="background wallpaper"
+        onerror=${() => setWallpaper(getImgURLString())}
       />
     </div>
   `;

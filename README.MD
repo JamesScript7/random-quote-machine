@@ -23,11 +23,10 @@ python -m SimpleHTTPServer
 
 * Displays a wallpaper provided by [picsum](https://picsum.photos)
 
-* Allows you to Tweet the quote with the embedded [Tweet button](https://developer.twitter.com/en/docs/twitter-for-websites/tweet-button/overview)
+* Screensaver mode automatically renders the next set of images and quotes at 30 second intervals
 
-* Screensaver mode automatically renders the next set of images and quotes at 15 second intervals
-
-## Bonus:
-1. Responsive
-2. Optimization - Mobile clients load a smaller sized wallpaper.
-3. BEM methodolgy (CSS class naming convention)
+## Misc:
+* Responsive
+* Optimized - Mobile clients load a smaller sized wallpaper.
+* BEM methodolgy (CSS class naming convention)
+* Preact Hooks

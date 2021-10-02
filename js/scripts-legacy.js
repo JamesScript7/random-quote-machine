@@ -27,14 +27,13 @@ $(document).ready(function() {
     quoteField = document.getElementById('quote-field'),
     quoteAuthor = document.getElementById('author-field'),
     tweetBtn = document.getElementById('btn'),
-    urlQuotes = '', // 'https://gist.githubusercontent.com/JamesScript7/9071c8419edaca2c7ced77c18c4236f1/raw/ef1161709601eb71db6fa7da99c657a3f4bd2fda/Quotes.json',
+    urlQuotes = 'https://gist.githubusercontent.com/JamesScript7/9071c8419edaca2c7ced77c18c4236f1/raw/ef1161709601eb71db6fa7da99c657a3f4bd2fda/Quotes.json',
     // Quote Parsing
     rand,
     authorHashTag,
     fullQuote,
     // Slideshow
     slide = false,
-    // setSlide;
 
   // Random Number Generators :)
   function randomQuoteNum(x) {
@@ -67,7 +66,7 @@ $(document).ready(function() {
         }, 50);
       },
       success: function(data) {
-        // quoteJSON = JSON.parse(data);
+        quoteJSON = JSON.parse(data);
       },
       cache: 'false'
     });
@@ -94,8 +93,8 @@ $(document).ready(function() {
         $('#image').fadeOut(1000, function() {
           $('#image').attr('src', backgroundImg + imageNumber);
           // Prep Quote string
-          // authorHashTag = quoteJSON[rand].name.replace(/\s/g, '');
-          // fullQuote = tweetFormat(quoteJSON[rand].quote, authorHashTag);
+          authorHashTag = quoteJSON[rand].name.replace(/\s/g, '');
+          fullQuote = tweetFormat(quoteJSON[rand].quote, authorHashTag);
         });
 
         // When the image has finished loading!
