@@ -10,7 +10,7 @@ const IMG_RESOLUTION_HEIGHT = '1536';
 const PICSUM_MAX_LENGTH = '1084';
 const imgURL = `https://picsum.photos/${IMG_RESOLUTION_WIDTH}/${IMG_RESOLUTION_HEIGHT}/?image=`;
 
-function Wallpaper () {
+function Wallpaper() {
   // TODO:
   // should handle button click from a button component elsewhere
   // should handle setInterval when triggered in another component
