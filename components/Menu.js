@@ -1,14 +1,23 @@
 import { h } from 'https://unpkg.com/preact@latest?module';
-import { useState } from 'https://unpkg.com/preact@latest/hooks/dist/hooks.module.js?module';
+import { useContext, useState } from 'https://unpkg.com/preact@latest/hooks/dist/hooks.module.js?module';
 import htm from 'https://unpkg.com/htm?module';
 
-const html = htm.bind(h);
+import { Settings } from '../js/settings-context.js';
 
+// COMPONENTS
 import Footer from './Footer.js';
 import ToggleSwitch from './ToggleSwitch.js';
 
+const html = htm.bind(h);
+
 function Menu() {
   const [MenuToggle, setMenuToggle] = useState(false);
+
+  const updateSettings = (name, value) => {
+    console.log('wee:', name);
+    console.log('value:', value);
+    // console.log(useContext(Settings));
+  };
 
   return html`
     <div class="menu">
@@ -17,21 +26,27 @@ function Menu() {
         <h3>Menu</h3>
         <ul>
           <li class="menu__listitem">
-            <${ToggleSwitch} name="screensaver" />
-            <span class="menu__text">
-              Enable screensaver mode
-            </span>
-          </li>
-          <li class="menu__listitem">
-            <${ToggleSwitch} name="time" />
+            <${ToggleSwitch}
+              name="time"
+              updateSettings="${updateSettings}" />
             <span class="menu__text">
               Display time
             </span>
           </li>
           <li class="menu__listitem">
-            <${ToggleSwitch} name="layout" />
+            <${ToggleSwitch}
+              name="layout"
+              updateSettings="${updateSettings}" />
             <span class="menu__text">
               Display quotes on the bottom
+            </span>
+          </li>
+          <li class="menu__listitem">
+            <${ToggleSwitch}
+              name="screensaver"
+              updateSettings="${updateSettings}" />
+            <span class="menu__text">
+              Enable screensaver mode
             </span>
           </li>
         </ul>

@@ -4,18 +4,24 @@ import htm from 'https://unpkg.com/htm?module';
 
 const html = htm.bind(h);
 
-function ToggleSwitch({ name }) {
+function ToggleSwitch({ name, updateSettings }) {
   // TODO: state dependent on intial state from context
-  const [switchToggle, setSwitchToggle] = useState(false);
+  const [toggleValue, setToggleValue] = useState(false);
+
+  const handleChange = () => {
+    const value = !toggleValue;
+    setToggleValue(() => value);
+    updateSettings(name, value);
+  };
 
   return html`
-    <button class="toggleswitch ${switchToggle ? 'toggleswitch--on' : 'toggleswitch--off'}">
+    <button class="toggleswitch__button ${toggleValue ? 'toggleswitch__button--on' : 'toggleswitch__button--off'}">
       <input
         id="toggleswitch__input--${name}"
         class="toggleswitch__input"
         type="checkbox"
         value="${name}"
-        onChange="${() => setSwitchToggle(() => !switchToggle)}" />
+        onChange="${() => handleChange()}" />
       <label for="toggleswitch__input--${name}" class="toggleswitch__label">
         <span class="toggleswitch__span"></span>
       </label>
