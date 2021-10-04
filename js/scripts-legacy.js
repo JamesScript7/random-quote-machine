@@ -1,3 +1,7 @@
+/*
+LEGACY SCRIPT
+*/
+
 'use strict';
 $(document).ready(function() {
   // Hide quote box initially, so it can fade in with background image.
@@ -30,7 +34,6 @@ $(document).ready(function() {
     fullQuote,
     // Slideshow
     slide = false,
-    setSlide;
 
   // Random Number Generators :)
   function randomQuoteNum(x) {
@@ -170,14 +173,4 @@ $(document).ready(function() {
   $('#quote-btn').click(function() {
     loadContent();
   });
-  // function pickRandomQuote(obj) {
-    // // This will put the keys in an array so we can use the index for random assignment.
-    // var
-    //   keys = Object.keys(obj),
-    //   keyNum = keys.length * Math.random() << 0;
-    //
-    // quoteAuthor.innerHTML = `&nbsp - ${keys[keyNum]}`;
-    //
-    // return obj[keys[keyNum]];
-  // }
 });

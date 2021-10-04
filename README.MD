@@ -1,33 +1,37 @@
-# 101 Famous Quotes!
+# 101 Famous Quotes
 
-## A simple quote generator.
-* Display a random quote from a JSON source.
+*Modernized for 2021* 😊
 
-* Display a randomized wallpaper.
+## Project link:
+http://peaceful-name.surge.sh
 
-* Able to tweet the quote with the twitter widget.
+## Tech stack:
+Built with [Preact](https://preactjs.com/)
 
-* Slide-show mode automatically renders the next random image and quote every 15 seconds.
+---
 
-Hopefully the quotes provide inspiration || motivation for you :)
+### For development, start up the local server:
+```
+python -m SimpleHTTPServer
+```
+### *Voilà!* 🎉
 
-**SKILLS:** HTML, CSS, JS, RegExp, jQuery, and Flexbox.
+![alt text](https://raw.githubusercontent.com/JamesScript7/random-quote-machine/master/images/screenshot1.png)
 
-[Link to the webpage!](http://peaceful-name.surge.sh/)
+and
 
-*Screenshot:*
+![alt text](https://raw.githubusercontent.com/JamesScript7/random-quote-machine/master/images/screenshot2
+.png)
 
-![alt text](https://raw.githubusercontent.com/JamesScript7/random-quote-machine/master/images/screenshot.png)
+## What it does:
+* Displays a quote sourced from this [JSON link](https://gist.githubusercontent.com/JamesScript7/9071c8419edaca2c7ced77c18c4236f1/raw/ef1161709601eb71db6fa7da99c657a3f4bd2fda/Quotes.json)
 
-## Incremental Steps taken:
-1. Source the background image:  (https://picsum.photos/)
-2. Source quotes from an external source: (https://gist.github.com/dmakk767/9375ff01aff76f1788aead1df9a66338).
-3. Styled the website.
-4. Added a social media share button to twitter.
-5. Made it mobile responsive. (Mobile clients load a smaller, more appropriate size image.)
-6. Background images change with each button click.
-7. Added slide-show mode!
+* Displays a wallpaper provided by [picsum](https://picsum.photos)
 
-## Future Upgrades:
-1. Larger quote API.
-2. Move quote box to the bottom in slide-show mode on the desktop.
+* Screensaver mode automatically renders the next set of images and quotes at 30 second intervals
+
+## Misc:
+* Responsive
+* Optimized - Mobile clients load a smaller sized wallpaper.
+* BEM methodolgy (CSS class naming convention)
+* Preact Hooks

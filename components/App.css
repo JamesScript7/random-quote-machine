@@ -1,0 +1,39 @@
+#container {
+  font-family: Helvetica, Verdana, sans-serif;
+  background-color: #000;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app__wrapper {
+  width: 100vw;
+  height: 100vh;
+}
+
+/* DESKTOP MODE */
+@media only screen and (min-width: 667px) {
+  #quote-btn:active, #quote-btn:hover {
+    background-color: #DBDC19;
+    color: #505050;
+    transition: all 1s ease;
+  }
+
+  #quote-box {
+    font-size: 1.5em;
+  }
+}
+
+/* MOBILE MODE */
+@media only screen and (max-width: 450px) {
+  #quote-btn {
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+  }
+
+  #quote-box {
+    font-size: 1.2em;
+  }
+}

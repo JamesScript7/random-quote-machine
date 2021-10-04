@@ -1,0 +1,23 @@
+footer {
+  /* background: rgba(20, 20, 20, 0.3); */
+  /* background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)); */
+  /* width: 100%; */
+  /* padding: 4px 0; */
+  /* text-align: center; */
+  color: #fffafa;
+}
+
+footer ul li {
+  display: inline;
+  font-size: 1rem;
+  padding-left: 2px;
+}
+
+a:link,
+a:visited {
+  color: #fffafa;
+}
+
+a:hover {
+  color: #6495ed;
+}
