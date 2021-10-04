@@ -16,7 +16,9 @@ python -m SimpleHTTPServer
 ```
 ### *Voilà!* 🎉
 
-![alt text](https://raw.githubusercontent.com/JamesScript7/random-quote-machine/master/images/screenshot.png)
+![alt text](https://raw.githubusercontent.com/JamesScript7/random-quote-machine/master/images/screenshot1.png)
+
+![alt text](https://raw.githubusercontent.com/JamesScript7/random-quote-machine/master/images/screenshot2.png)
 
 ## What it does:
 * Displays a quote sourced from this [JSON link](https://gist.githubusercontent.com/JamesScript7/9071c8419edaca2c7ced77c18c4236f1/raw/ef1161709601eb71db6fa7da99c657a3f4bd2fda/Quotes.json)
