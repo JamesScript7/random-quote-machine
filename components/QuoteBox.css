@@ -30,6 +30,7 @@
 .quotebox__author {
   padding-bottom: 10px;
   text-align: right;
+  white-space: nowrap;
 }
 
 .quotebox__actions {
@@ -42,6 +43,7 @@
   border-radius: 6px;
   background-color: #6495ed;
   color: #fff;
+  white-space: nowrap;
 }
 
 /* BOTTOM LAYOUT */
