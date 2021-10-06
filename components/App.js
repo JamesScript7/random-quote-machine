@@ -14,7 +14,7 @@ const REFRESH_TIME = 1000 * 30;
 
 function App() {
   const [state, setState] = useState({
-    displayTime: true,
+    displayTime: false,
     alternateLayout: false,
     screensaverMode: false,
     cycle: 0,

@@ -16,7 +16,8 @@ function Menu({ settings, setSettings }) {
       const opts = { ...settings };
 
       if (name === 'screensaverMode') {
-        opts.alternateLayout = true; 
+        opts.displayTime = true;
+        opts.alternateLayout = true;
       }
 
       return {
